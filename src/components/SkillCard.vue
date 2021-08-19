@@ -2,7 +2,7 @@
   <div class="w-40 sm:w-44 h-48 m-2 sm:m-3" style="transform-style: preserve-3d;">
     <div class="skillcard-front skillcard-face w-full h-full p-3.5">
       <p class="mb-2 font-semibold">{{ skill.name }}</p>
-      <img class="w-11/12 h-auto m-auto" style="transform: translateZ(20px);" :src="`/src/assets/${skill.imgsrc}`"  alt="Java Logo">
+      <img class="w-11/12 h-auto m-auto" style="transform: translateZ(20px);" :src="`/${skill.imgsrc}`"  :alt="`${skill.name} Logo`">
     </div>
     <div class="skillcard-back skillcard-face flex justify-between flex-col w-full h-full p-3.5">
       <p class="font-semibold">{{ skill.name }}</p>
