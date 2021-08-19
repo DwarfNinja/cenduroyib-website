@@ -1,11 +1,14 @@
 <template>
-    <Header></Header>
-    <div id="boxed-container">
-      <Title></Title>
-      <WhoAmI></WhoAmI>
-      <Skills></Skills>
-      <Services></Services>
-    </div>
+  <Header></Header>
+  <div id="boxed-container">
+    <Title></Title>
+    <WhoAmI></WhoAmI>
+    <Skills></Skills>
+    <Services></Services>
+    <Contact></Contact>
+    <About></About>
+  </div>
+  <Footer></Footer>
 </template>
 
 <script>
@@ -14,25 +17,41 @@ import Title from "./components/Title.vue";
 import WhoAmI from "./components/WhoAmI.vue";
 import Skills from "./components/Skills.vue";
 import Services from "./components/Services.vue";
+import Contact from "./components/Contact.vue";
+import About from "./components/About.vue"
+import Footer from "./components/Footer.vue";
 
 export default  {
   name: "App",
   components: {
+    Contact,
     Header,
     Title,
     WhoAmI,
     Skills,
-    Services
+    Services,
+    About,
+    Footer
+  },
+  mounted() {
+    AOS.init({
+          offset: 250,
+          once: true,
+        }
+    );
   }
 }
 
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;300;400;600&display=swap');
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+html {
+  scroll-behavior: smooth;
+}
+
 #app {
   font-family: "JetBrains Mono", monospace;
+
 }
 
 body {

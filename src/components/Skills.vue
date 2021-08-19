@@ -1,7 +1,8 @@
 <template>
-  <section class="mb-52">
-    <h2 class="text-2xl mb-16 underline-h2" data-aos="fade-up" data-aos-duration="800">Skills</h2>
-    <div class="flex flex-wrap justify-center max-w-4xl m-auto" style="grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));">
+  <section class="mb-52" id="skills">
+    <h2 class="text-2xl mb-10 underline-h2" data-aos="fade-up" data-aos-duration="800">Skills</h2>
+    <div class="flex flex-wrap justify-center max-w-4xl m-auto" style="grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));"
+         data-aos="fade-up" data-aos-duration="1000">
       <SkillCard class="skillcard" :skill="java"></SkillCard>
       <SkillCard class="skillcard" :skill="python"></SkillCard>
       <SkillCard class="skillcard" :skill="git"></SkillCard>
@@ -17,7 +18,6 @@
 
 <script>
 import SkillCard from "./SkillCard.vue";
-import '/src/vanillatilt-custom.js'
 
 export default {
   name: "Skills",
@@ -84,30 +84,15 @@ export default {
       flip: false
     });
 
-
     let skillcards = document.querySelectorAll('.skillcard');
     skillcards.forEach(skillcard => {
       skillcard.addEventListener('click', function () {
-        if (!skillcard.classList.contains("flipped")) {
-          flipToBack(skillcard);
-        }
-        else {
-          flipToFront(skillcard);
-        }
-      });
-    });
-
-
-    function flipToFront(skillcard) {
+          flipCard(skillcard, !skillcard.classList.contains("flipped"))
+      })
+    })
+    function flipCard(skillcard, boolean) {
       skillcard.classList.toggle("flipped");
-      skillcard.vanillaTilt.flipElement(false);
-      console.log("flip")
-    }
-
-    function flipToBack(skillcard) {
-      skillcard.classList.toggle("flipped");
-      skillcard.vanillaTilt.flipElement(true);
-      console.log("flip")
+      skillcard.vanillaTilt.flipElement(boolean);
     }
   }
 }
