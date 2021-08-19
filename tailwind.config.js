@@ -4,7 +4,15 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "custom-blue": "#2734ed"
+        "customblue": "#2734ed"
+      },
+      boxShadow: {
+        "customb": '0px 5px 20px 0px darkblue',
+        "custombr": '10px 10px 20px 0px darkblue',
+      },
+      maxWidth: {
+        "8xl": "88rem",
+        "9xl": "96rem",
       }
     },
   },

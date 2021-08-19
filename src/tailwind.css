@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+
+    .underline-h2 {
+        text-decoration-line: underline ;
+        text-underline-offset: 0.8rem;
+        text-decoration-thickness: 2px;
+    }
+
+    .skillcard-face {
+        color: black;
+        background-color: white;
+        border-radius: 1rem;
+        box-shadow: 10px 10px 20px darkblue;
+        position: absolute;
+        backface-visibility: hidden;
+        transform-style: preserve-3d;
+        transform: perspective(1000px);
+    }
+}
