@@ -1,6 +1,6 @@
 <template>
   <section class="mb-48">
-    <img class="mx-auto mb-14 rounded-3xl shadow-custombr" src="/profile-picture-zoomed.png" alt="Profile Picture"
+    <img class="mx-auto mb-14 rounded-3xl shadow-custombr" src="/profile-picture-zoomed-optimized.jpg" alt="Profile Picture"
          data-aos="fade-up" data-aos-duration="800" data-aos-anchor-placement="center-center">
     <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="300" data-aos-anchor-placement="center-center">
       <h2 class="text-2xl mb-6 underline-h2">
