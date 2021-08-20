@@ -5,7 +5,7 @@
     </h2>
     <div class="grid justify-center gap-7 sm:gap-14" id="services-grid-container">
       <div class="services-items text-white rounded-2xl sm:h-auto" id="service-software" style="background-color: #202020; border: 11px solid #959595; height: 550px"
-           data-aos="fade-right" data-aos-duration="800">
+           data-aos="fade-right" data-aos-duration="800" data-aos-anchor-placement="center-center">
         <div class="services-header">
           <i class="fas fa-terminal fa-2x mt-4 mb-4"></i>
           <h2 class="text-2xl mb-8 underline-h2">
@@ -22,28 +22,28 @@
         </div>
       </div>
       <div class="services-items" id="service-website"
-           data-aos="fade-left" data-aos-duration="800">
+           data-aos="fade-left" data-aos-duration="800" data-aos-anchor-placement="center-center">
         <div class="services-header">
           <i class="far fa-window-maximize fa-2x mb-4"></i>
-          <h2 class="text-2xl mb-8 underline-h2">
+          <h2 class="text-2xl mb-12 underline-h2">
             Website
           </h2>
         </div>
         <div class="flex flex-wrap gap-2 sm:gap-4 justify-center" id="service-website-elements-container">
-          <div class="service-website-element w-2/5 p-2 rounded sm:p-3" style="background-color: #56C2F1;"
-               data-aos="fade-right" data-aos-duration="1000" data-aos-delay="500">Starting a small business?</div>
+          <div class="service-website-element w-2/5" style="background-color: #56C2F1;"
+               data-aos="fade-right" data-aos-duration="1000" data-aos-delay="500" data-aos-anchor-placement="center-center">Starting a small business?</div>
 
-          <div class="service-website-element w-1/2 p-3 rounded" style="background-color: #FEE94E;"
-               data-aos="fade-left" data-aos-duration="1000" data-aos-delay="1000" >Want an online portfolio to show your skills?</div>
+          <div class="service-website-element w-1/2" style="background-color: #FEE94E;"
+               data-aos="fade-left" data-aos-duration="1000" data-aos-delay="1100" data-aos-anchor-placement="center-center">Want an online portfolio to show your skills?</div>
 
-          <div class="service-website-element w-5/12 p-3 rounded" style="background-color: #A1D72D;"
-               data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1500" >A custom-made website is what you need.</div>
+          <div class="service-website-element w-7/12 sm:w-5/12" style="background-color: #A1D72D;"
+               data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1700" data-aos-anchor-placement="center-center">A custom-made website is what you need.</div>
 
-          <div class="service-website-element text-white w-11/12 p-3 rounded" style="background-color: #D5322F;"
-               data-aos="flip-up" data-aos-duration="1000" data-aos-delay="2000" >We will sit down together and discuss the details.</div>
+          <div class="service-website-element text-white w-11/12" style="background-color: #D5322F;"
+               data-aos="flip-up" data-aos-duration="1000" data-aos-delay="2300" data-aos-anchor-placement="center-center">We will sit down together and discuss the details.</div>
 
-          <div class="service-website-element text-white w-3/5 p-3 rounded" style="background-color: #1C28A5;"
-               data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="2500" >To get a website perfectly tailored to you!</div>
+          <div class="service-website-element text-white w-4/5 p-2" style="background-color: #1C28A5;"
+               data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="2900" data-aos-anchor-placement="center-center">To get a website perfectly tailored to you!</div>
         </div>
       </div>
     </div>
@@ -80,7 +80,7 @@ export default {
       });
     };
 
-    const intersectionObserver = new IntersectionObserver(isInViewport, {rootMargin: "0px 0px -150px 0px"});
+    const intersectionObserver = new IntersectionObserver(isInViewport, {rootMargin: "0px 0px -300px 0px"});
     const obsOptions = {};
 
     let mutationObserver = new MutationObserver(function(mutations) {
@@ -100,6 +100,29 @@ export default {
       mutationObserver.observe(element, {attributes: true})
     });
 
+    let serviceSoftware = document.getElementById("service-software");
+    let serviceWebsite = document.getElementById("service-website");
+
+    if (window.matchMedia("(min-width: 640px)").matches) {
+      serviceSoftware.setAttribute("data-aos","fade-right");
+      serviceSoftware.setAttribute("data-aos-duration","800");
+      serviceSoftware.setAttribute("data-aos-anchor-placement","center-center");
+
+      serviceWebsite.setAttribute("data-aos","fade-left");
+      serviceWebsite.setAttribute("data-aos-duration","800");
+      serviceWebsite.setAttribute("data-aos-anchor-placement","center-center");
+
+    } else {
+      removeAOSAttributes(serviceSoftware);
+      removeAOSAttributes(serviceWebsite);
+    }
+
+    function removeAOSAttributes(element) {
+      element.removeAttribute("data-aos");
+      element.removeAttribute("data-aos-duration");
+      element.removeAttribute("data-aos-anchor-placement");
+    }
+
   }
 }
 </script>
@@ -118,6 +141,10 @@ export default {
   border: 3px solid #202020;
   border-top: 1.4rem solid #202020;
   border-radius: 15px 15px  0 0;
+}
+
+.service-website-element {
+  @apply p-2 sm:p-3 rounded;
 }
 
 @media (max-width: 1400px) {

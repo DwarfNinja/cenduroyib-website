@@ -1,5 +1,6 @@
 <template>
-  <section id="about-website">
+  <section id="about-website" class="mb-20"
+           data-aos="fade-up" data-aos-duration="800" data-aos-anchor-placement="top-center">
     <h2 class="text-2xl mb-10 underline-h2">
       About this website
     </h2>
