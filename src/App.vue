@@ -35,10 +35,10 @@ export default  {
   },
   mounted() {
     AOS.init({
-          offset: 250,
-          once: true,
-        }
-    );
+      offset: -100,
+      once: true,
+      anchorPlacement:"center-center"
+    });
   }
 }
 

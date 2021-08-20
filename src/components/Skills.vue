@@ -1,8 +1,8 @@
 <template>
   <section class="mb-52" id="skills">
-    <h2 class="text-2xl mb-10 underline-h2" data-aos="fade-up" data-aos-duration="800">Skills</h2>
+    <h2 class="text-2xl mb-10 underline-h2" id="skills-header" data-aos="fade-up" data-aos-duration="800" data-aos-anchor-placement="center-center">Skills</h2>
     <div class="flex flex-wrap justify-center max-w-4xl m-auto" style="grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));"
-         data-aos="fade-up" data-aos-duration="1000">
+         data-aos="fade-up" data-aos-duration="1000" data-aos-anchor-placement="top-center">
       <SkillCard class="skillcard" :skill="java"></SkillCard>
       <SkillCard class="skillcard" :skill="python"></SkillCard>
       <SkillCard class="skillcard" :skill="git"></SkillCard>
