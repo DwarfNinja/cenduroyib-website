@@ -6,7 +6,7 @@
       <h2 class="text-2xl mb-6 underline-h2">
         Who am I?
       </h2>
-      <p class="mx-auto px-8" style="max-width: 60rem">
+      <p class="mx-auto px-6 sm:px-8" style="max-width: 60rem">
         Hi, my name is Cendur, I am 20 years old and a third year student studying
         Software Development at the University of Applied Sciences in Utrecht - the Netherlands.
         Creative, cheerful and problem-solving with a passion for all things tech, my people skills help me bridge the gap

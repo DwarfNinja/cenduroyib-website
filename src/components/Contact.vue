@@ -3,7 +3,7 @@
     <h2 class="text-2xl mb-14 underline-h2">
       Contact me
     </h2>
-    <form class="flex flex-col px-6" method="POST" data-netlify="true">
+    <form class="flex flex-col px-6 overflow-hidden" method="POST" data-netlify="true">
       <label class="mb-2">Name</label>
       <label  data-aos="flip-up" data-aos-duration="800" data-aos-anchor-placement="center-center">
         <input class="contact-input focus-border" type="text" placeholder="John Doe" name="name" required>
