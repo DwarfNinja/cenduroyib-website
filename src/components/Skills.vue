@@ -86,13 +86,36 @@ export default {
 
     let skillcards = document.querySelectorAll('.skillcard');
     skillcards.forEach(skillcard => {
-      skillcard.addEventListener('click', function () {
+      skillcard.addEventListener('click', function (event) {
           flipCard(skillcard, !skillcard.classList.contains("flipped"))
       })
     })
     function flipCard(skillcard, boolean) {
       skillcard.classList.toggle("flipped");
       skillcard.vanillaTilt.flipElement(boolean);
+    }
+
+    let isMobile = false
+    checkIfMobile()
+    window.addEventListener('resize', checkIfMobile)
+    function checkIfMobile() {
+      if (window.matchMedia("(min-width: 640px)").matches) {
+        if (isMobile === true) {
+          skillcards.forEach(skillcard => {
+            skillcard.vanillaTilt.settings.scale = 1.25;
+            skillcard.vanillaTilt.settings.max = 18;
+            isMobile = false;
+          })
+        }
+      } else {
+        if (isMobile === false) {
+          skillcards.forEach(skillcard => {
+            skillcard.vanillaTilt.settings.scale = 1;
+            skillcard.vanillaTilt.settings.max = 0;
+            isMobile = true;
+          })
+        }
+      }
     }
   }
 }

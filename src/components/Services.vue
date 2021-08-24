@@ -29,7 +29,7 @@
             Website
           </h2>
         </div>
-        <div class="flex flex-wrap gap-2 sm:gap-4 justify-center" id="service-website-elements-container">
+        <div class="flex flex-wrap gap-2 sm:gap-4 justify-center overflow-hidden" id="service-website-elements-container">
           <div class="service-website-element w-2/5" style="background-color: #56C2F1;"
                data-aos="fade-right" data-aos-duration="1000" data-aos-delay="500" data-aos-anchor-placement="center-center">Starting a small business?</div>
 
@@ -40,10 +40,10 @@
                data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1700" data-aos-anchor-placement="center-center">A custom-made website is what you need.</div>
 
           <div class="service-website-element text-white w-11/12" style="background-color: #D5322F;"
-               data-aos="flip-up" data-aos-duration="1000" data-aos-delay="2300" data-aos-anchor-placement="center-center">We will sit down together and discuss the details.</div>
+               data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="2300" data-aos-anchor-placement="center-center">We will sit down together and discuss the details.</div>
 
           <div class="service-website-element text-white w-4/5 p-2" style="background-color: #1C28A5;"
-               data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="2900" data-aos-anchor-placement="center-center">To get a website perfectly tailored to you!</div>
+               data-aos="zoom-out" data-aos-duration="1000" data-aos-delay="2900" data-aos-anchor-placement="top-center">To get a website perfectly tailored to you!</div>
         </div>
       </div>
     </div>
@@ -122,7 +122,6 @@ export default {
       element.removeAttribute("data-aos-duration");
       element.removeAttribute("data-aos-anchor-placement");
     }
-
   }
 }
 </script>
