@@ -10,7 +10,7 @@
         Hi, my name is Cendur, I am 20 years old and a third year student studying
         Software Development at the University of Applied Sciences in Utrecht - the Netherlands.
         Creative, cheerful and problem-solving with a passion for all things tech, my people skills help me bridge the gap
-        between the tech and the business world.
+        between the tech and business world.
       </p>
     </div>
   </section>
