@@ -55,10 +55,10 @@ html {
 }
 
 body {
-  @apply flex flex-col text-center bg-customblue text-white;
+  @apply flex flex-col text-center bg-customdarkpurple text-white;
 }
 
 #boxed-container {
-  @apply py-28;
+  @apply py-28 mt-5;
 }
 </style>

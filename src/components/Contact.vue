@@ -7,18 +7,18 @@
     <form class="flex flex-col px-6 overflow-hidden" id="contact-form" name="contact" method="POST" data-netlify-recaptcha="true" data-netlify="true" v-on:submit.prevent="onSubmit">
       <input type="hidden" name="form-name" value="contact">
       <label class="mb-2">Name</label>
-      <div  data-aos="flip-up" data-aos-duration="800" data-aos-anchor-placement="center-center">
+      <div  data-aos="fade" data-aos-duration="800" data-aos-anchor-placement="center-center">
         <input class="contact-input" type="text" placeholder="John Doe" name="name" required>
       </div>
       <label class="mb-2">Email</label>
       <div class="relative inline-block">
-        <div data-aos="flip-up" data-aos-duration="800" data-aos-anchor-placement="center-center">
+        <div data-aos="fade" data-aos-duration="800" data-aos-anchor-placement="center-center">
           <input v-bind:class="{ 'invalid-input': !validEmail }" class="contact-input" type="text" placeholder="johndoe@email.com" name="email" required>
         </div>
         <label v-if="!validEmail" class="absolute top-3 ml-36 bg-customred text-sm font-bold px-2 py-1 rounded">Not a valid email adres!</label>
       </div>
       <label class="mb-2">Message</label>
-      <div data-aos="flip-up" data-aos-duration="800" data-aos-anchor-placement="top-center">
+      <div data-aos="fade" data-aos-duration="800" data-aos-anchor-placement="top-center">
         <textarea class="contact-textarea" style="min-height: 14rem; min-width: 16.5rem; max-width: 27rem" placeholder="Your message here" name="message" required></textarea>
       </div>
       <div data-netlify-recaptcha="true"></div>
@@ -92,11 +92,11 @@ export default {
 <style scoped>
 
 .contact-input {
-  @apply p-2.5 rounded text-black mb-7 shadow-custombr outline-none border-transparent focus:border-customgreen border-4;
+  @apply p-2.5 rounded text-black mb-7 shadow-custombr outline-none border-transparent focus:border-customyellow border-3;
 }
 
 .contact-textarea {
-  @apply  mb-10 p-3 rounded text-black max-h-80 w-full shadow-custombr outline-none border-transparent focus:border-customgreen border-4;
+  @apply  mb-10 p-3 rounded text-black max-h-80 w-full shadow-custombr outline-none border-transparent focus:border-customyellow border-3;
 }
 
 button:hover {

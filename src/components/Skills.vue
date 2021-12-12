@@ -1,19 +1,19 @@
 <template>
   <section class="mb-52" id="skills">
     <h2 class="text-2xl mb-10 underline-h2" id="skills-header" data-aos="fade-up" data-aos-duration="800" data-aos-anchor-placement="center-center">Skills</h2>
-    <div class="flex flex-wrap justify-center max-w-4xl m-auto" style="grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));"
-         data-aos="fade-up" data-aos-duration="1000" data-aos-anchor-placement="top-center">
-      <SkillCard class="skillcard" :skill="java"></SkillCard>
-      <SkillCard class="skillcard" :skill="python"></SkillCard>
-      <SkillCard class="skillcard" :skill="git"></SkillCard>
-      <SkillCard class="skillcard" :skill="godot"></SkillCard>
-      <SkillCard class="skillcard" :skill="json"></SkillCard>
-      <SkillCard class="skillcard" :skill="javascript"></SkillCard>
-      <SkillCard class="skillcard" :skill="html"></SkillCard>
-      <SkillCard class="skillcard" :skill="css"></SkillCard>
+    <div class="relative max-w-4xl m-auto" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500" data-aos-anchor-placement="top-center" >
+      <div class="flex flex-wrap justify-center max-w-4xl" style="grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));">
+        <SkillCard class="skillcard" :skill="java"></SkillCard>
+        <SkillCard class="skillcard" :skill="python"></SkillCard>
+        <SkillCard class="skillcard" :skill="git"></SkillCard>
+        <SkillCard class="skillcard" :skill="godot"></SkillCard>
+        <SkillCard class="skillcard" :skill="json"></SkillCard>
+        <SkillCard class="skillcard" :skill="javascript"></SkillCard>
+        <SkillCard class="skillcard" :skill="html"></SkillCard>
+        <SkillCard class="skillcard" :skill="css"></SkillCard>
+      </div>
     </div>
   </section>
-
 </template>
 
 <script>
@@ -71,7 +71,8 @@ export default {
         imgsrc: "css-logo.png",
         text: "Frontend styling language.",
         exp: "1,5 years"
-      }
+      },
+      isMobile: false
     }
   },
   mounted() {
@@ -97,7 +98,7 @@ export default {
 
     let isMobile = false
     checkIfMobile()
-    window.addEventListener('resize', checkIfMobile)
+    window.addEventListener('resize', () => {checkIfMobile})
     function checkIfMobile() {
       if (window.matchMedia("(min-width: 640px)").matches) {
         if (isMobile === true) {
@@ -122,5 +123,9 @@ export default {
 </script>
 
 <style scoped>
+
+img {
+  width: 200px;
+}
 
 </style>
