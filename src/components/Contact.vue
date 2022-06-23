@@ -49,18 +49,19 @@ export default {
     },
 
     onSubmit: function (event) {
-      event.preventDefault();
       let contactForm = document.getElementById("contact-form");
-      let formData = new FormData(contactForm);
-      if (this.ValidateEmail(formData.get("email")) === false) {
+      let data = new FormData(contactForm);
+      if (this.ValidateEmail(data.get("email")) === false) {
         console.log("Entered email is not a valid email");
         return;
       }
+      let queryString = new URLSearchParams(data.toString());
 
+      const formData = 'form-name=' + contactForm.name + '&' + queryString;
       const options = {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formData.toString()).toString()
+        body: formData
       };
 
       fetch('/', options)
