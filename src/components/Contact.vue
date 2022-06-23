@@ -1,5 +1,6 @@
 <template>
   <Alert v-if="showalert" :formresponse="formresponse"></Alert>
+  <div hidden class="bg-customgreen"></div>
   <section class="mb-44" id="contact">
     <h2 class="text-2xl mb-14 underline-h2">
       Contact me
