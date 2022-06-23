@@ -4,7 +4,7 @@
     <h2 class="text-2xl mb-14 underline-h2">
       Contact me
     </h2>
-    <form class="flex flex-col px-6 overflow-hidden" id="contact-form" name="contact" method="POST" data-netlify-recaptcha="true" data-netlify="true" v-on:submit.prevent="onSubmit">
+    <form class="flex flex-col px-6 overflow-hidden" id="contact-form" name="contact" method="post" data-netlify-recaptcha="true" data-netlify="true" v-on:submit.prevent="onSubmit">
       <input type="hidden" name="form-name" value="contact">
       <label class="mb-2">Name</label>
       <div  data-aos="fade" data-aos-duration="800" data-aos-anchor-placement="center-center">
@@ -18,7 +18,7 @@
         <label v-if="!validEmail" class="absolute top-3 ml-36 bg-customred text-sm font-bold px-2 py-1 rounded">Not a valid email adres!</label>
       </div>
       <label class="mb-2">Message</label>
-      <div data-aos="fade" data-aos-duration="800" data-aos-anchor-placement="top-center">
+      <div data-aos="fade" data-aos-duration="800" data-aos-anchor-placement="center-center">
         <textarea class="contact-textarea" style="min-height: 14rem; min-width: 16.5rem; max-width: 27rem" placeholder="Your message here" name="message" required></textarea>
       </div>
       <div data-netlify-recaptcha="true"></div>
@@ -49,35 +49,33 @@ export default {
     },
 
     onSubmit: function (event) {
+      event.preventDefault();
       let contactForm = document.getElementById("contact-form");
-      let data = new FormData(contactForm);
-      this.ValidateEmail(data.get("email"))
-      if (this.ValidateEmail(data.get("email")) === false) {
+      let formData = new FormData(contactForm);
+      if (this.ValidateEmail(formData.get("email")) === false) {
         console.log("Entered email is not a valid email");
         return;
       }
-      let queryString = new URLSearchParams(data.toString());
 
-      const formData = 'form-name=' + contactForm.name + '&' + queryString;
       const options = {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: formData
+        body: new URLSearchParams(formData.toString()).toString()
       };
 
       fetch('/', options)
           .then((response) => {
-            if (response.ok || response.status === 404) {
-              this.showalert = true;
+            if (response.ok) {
               this.formresponse = "success";
+              this.showalert = true;
             }
             else {
               throw response;
             }
           })
           .catch((error) => {
-            this.showalert = true;
             this.formresponse = "fail";
+            this.showalert = true;
             console.log(error);
           });
     }
