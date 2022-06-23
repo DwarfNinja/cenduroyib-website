@@ -8,18 +8,18 @@
       <input type="hidden" name="form-name" value="contact">
       <label class="mb-2">Name</label>
       <div  data-aos="fade" data-aos-duration="800" data-aos-anchor-placement="center-center">
-        <input class="contact-input" type="text" placeholder="John Doe" name="name" required>
+        <input v-model="form.name" class="contact-input" type="text" placeholder="John Doe" name="name" required>
       </div>
       <label class="mb-2">Email</label>
       <div class="relative inline-block">
         <div data-aos="fade" data-aos-duration="800" data-aos-anchor-placement="center-center">
-          <input v-bind:class="{ 'invalid-input': !validEmail }" class="contact-input" type="text" placeholder="johndoe@email.com" name="email" required>
+          <input v-model="form.email" v-bind:class="{ 'invalid-input': !validEmail }" class="contact-input" type="text" placeholder="johndoe@email.com" name="email" required>
         </div>
         <label v-if="!validEmail" class="absolute top-3 ml-36 bg-customred text-sm font-bold px-2 py-1 rounded">Not a valid email adres!</label>
       </div>
       <label class="mb-2">Message</label>
       <div data-aos="fade" data-aos-duration="800" data-aos-anchor-placement="center-center">
-        <textarea class="contact-textarea" style="min-height: 14rem; min-width: 16.5rem; max-width: 27rem" placeholder="Your message here" name="message" required></textarea>
+        <textarea v-model="form.message" class="contact-textarea" style="min-height: 14rem; min-width: 16.5rem; max-width: 27rem" placeholder="Your message here" name="message" required></textarea>
       </div>
       <div data-netlify-recaptcha="true"></div>
       <div>
@@ -39,29 +39,44 @@ export default {
     return {
       showalert: false,
       formresponse: null,
-      validEmail: true
+      validEmail: true,
+      form: {
+        name: "",
+        email: "",
+        message: ""
+      }
     }
   },
   methods: {
-    ValidateEmail: function (email) {
+    encode: function (data) {
+      return Object.keys(data)
+      .map(
+          (key) =>
+              encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+      )
+      .join("&");
+    },
+
+    validateEmail: function (email) {
       this.validEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
       return this.validEmail;
     },
 
-    onSubmit: function (event) {
-      let contactForm = document.getElementById("contact-form");
-      let data = new FormData(contactForm);
-      if (this.ValidateEmail(data.get("email")) === false) {
+    onSubmit: function () {
+
+
+      if (this.validateEmail(this.form.email) === false) {
         console.log("Entered email is not a valid email");
         return;
       }
-      let queryString = new URLSearchParams(data.toString());
 
-      const formData = 'form-name=' + contactForm.name + '&' + queryString;
       const options = {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: formData
+        body: this.encode({
+          "form-name": "contact",
+          ...this.form,
+        }),
       };
 
       fetch('/', options)
@@ -83,7 +98,7 @@ export default {
   },
   mounted() {
     let emailInputElement = document.getElementsByName("email")[0];
-    emailInputElement.addEventListener('change', (event) => this.ValidateEmail(event.target.value));
+    emailInputElement.addEventListener('change', (event) => this.validateEmail(event.target.value));
   }
 }
 </script>
