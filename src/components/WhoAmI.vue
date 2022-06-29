@@ -20,7 +20,7 @@
 export default {
   name: "WhoAmI",
   computed: {
-    age: function () {
+    age() {
       let dateOfBirth = new Date("01/07/2001")
       let diffMs = (Date.now() - dateOfBirth);
       let age_dt = new Date(diffMs);

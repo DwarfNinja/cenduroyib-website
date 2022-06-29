@@ -49,21 +49,18 @@ export default {
     }
   },
   methods: {
-    encode: function (data) {
+    encode(data) {
       return Object.keys(data)
-      .map(
-          (key) =>
-              encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
-      )
+      .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
       .join("&");
     },
 
-    validateEmail: function (email) {
+    validateEmail(email) {
       this.invalidEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
       return this.invalidEmail;
     },
 
-    createAlert: function (formResponse) {
+    createAlert(formResponse) {
       this.showAlert = true;
       this.formResponse = formResponse
       window.setTimeout(() => {
@@ -71,7 +68,7 @@ export default {
       }, 6000);
     },
 
-    onSubmit: function () {
+    onSubmit() {
       if (this.validateEmail(this.form.email) === false) {
         console.log("Entered email is not a valid email");
         return;
