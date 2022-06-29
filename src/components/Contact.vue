@@ -14,9 +14,9 @@
       <label class="mb-2 mt-3.5">Email</label>
       <div class="relative inline-block">
         <div data-aos="fade" data-aos-duration="800" data-aos-anchor="#contact" data-aos-anchor-placement="center-center">
-          <input v-model="form.email" v-bind:class="{ 'invalid-input': invalidEmail }" class="contact-input" type="text" placeholder="johndoe@email.com" name="email" required>
+          <input v-model="form.email" v-bind:class="{ 'invalid-input': !validEmail }" class="contact-input" type="text" placeholder="johndoe@email.com" name="email" required>
         </div>
-        <label v-if="invalidEmail" id="invalid-email-label">Not a valid email adres!</label>
+        <label v-if="!validEmail" class="static sm:absolute top-0 sm:top-3 ml-0 sm:ml-36 bg-customred text-sm font-bold px-2 py-1 rounded">Not a valid email adres!</label>
       </div>
       <label class="mb-2 mt-3.5">Message</label>
       <div data-aos="fade" data-aos-duration="800" data-aos-anchor="#contact" data-aos-anchor-placement="center-center">
@@ -40,7 +40,7 @@ export default {
     return {
       showAlert: false,
       formResponse: null,
-      invalidEmail: true,
+      validEmail: true,
       form: {
         name: "",
         email: "",
@@ -56,8 +56,8 @@ export default {
     },
 
     validateEmail(email) {
-      this.invalidEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
-      return this.invalidEmail;
+      this.validEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
+      return this.validEmail;
     },
 
     createAlert(formResponse) {
@@ -131,7 +131,7 @@ button:hover {
 }
 
 .invalid-input {
-  @apply border-red-600 border-4 focus:border-red-600;
+  @apply border-red-600 border-3 focus:border-red-600;
 }
 
 </style>
