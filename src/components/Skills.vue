@@ -1,6 +1,6 @@
 <template>
   <section class="mb-52" id="skills">
-    <h2 class="text-2xl mb-10 underline-h2" id="skills-header" data-aos="fade-up" data-aos-duration="800" data-aos-anchor-placement="center-center">Skills</h2>
+    <h2 class="text-2xl mb-10 underline-h2" data-aos="fade-up" data-aos-duration="800" data-aos-anchor-placement="center-center">Skills</h2>
     <div class="relative max-w-4xl m-auto" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500" data-aos-anchor-placement="top-center" >
       <div class="flex flex-wrap justify-center max-w-4xl" style="grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));">
         <SkillCard class="skillcard" :skill="java"></SkillCard>
@@ -87,7 +87,7 @@ export default {
 
     let skillcards = document.querySelectorAll('.skillcard');
     skillcards.forEach(skillcard => {
-      skillcard.addEventListener('click', function (event) {
+      skillcard.addEventListener('click', function () {
           flipCard(skillcard, !skillcard.classList.contains("flipped"))
       })
     })
@@ -98,7 +98,7 @@ export default {
 
     let isMobile = false
     checkIfMobile()
-    window.addEventListener('resize', () => {checkIfMobile})
+    window.addEventListener('resize', () => {checkIfMobile()})
     function checkIfMobile() {
       if (window.matchMedia("(min-width: 640px)").matches) {
         if (isMobile === true) {
@@ -121,11 +121,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-
-img {
-  width: 200px;
-}
-
-</style>

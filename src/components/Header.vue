@@ -19,16 +19,11 @@ export default {
 </script>
 
 <style scoped>
-
 .header-menu-item {
   @apply mx-1 sm:mx-4 text-sm sm:text-lg p-1 px-2 rounded-2xl bg-customlightpurple;
 }
 
 .header-menu-item:hover {
   @apply bg-customdarkpurple;
-  /*text-decoration-line: underline ;*/
-  /*text-underline-offset: 0.3rem;*/
-  /*text-decoration-thickness: 2px;*/
 }
-
 </style>

@@ -24,7 +24,7 @@
       </div>
       <div data-netlify-recaptcha="true"></div>
       <div>
-        <button class="px-7 py-3.5 mb-10 rounded bg-white text-black font-bold shadow-custombr" type="submit">Send!</button>
+        <button class="px-7 py-3.5 mb-10 rounded bg-white text-black font-bold shadow-custombr transition-all transform duration-100 hover:scale-105" type="submit">Send!</button>
       </div>
     </form>
   </section>
@@ -106,32 +106,15 @@ export default {
 </script>
 
 <style scoped>
-
 .contact-input {
   @apply p-2.5 rounded text-black mb-3.5 shadow-custombr outline-none border-transparent focus:border-customyellow border-3;
 }
 
 .contact-textarea {
-  @apply  mb-10 p-3 rounded text-black max-h-80 w-full shadow-custombr outline-none border-transparent focus:border-customyellow border-3;
-}
-
-button:hover {
-  transition: transform .1s;
-  transform: scale(1.08);
-}
-
-#invalid-email-label {
-  @apply absolute top-3 ml-36 bg-customred text-sm font-bold px-2 py-1 rounded;
-}
-
-@media (max-width: 640px) {
-  #invalid-email-label {
-    @apply static top-0 ml-0 bg-customred text-sm font-bold px-2 py-1 rounded;
-  }
+  @apply mb-10 p-3 rounded text-black max-h-80 w-full shadow-custombr outline-none border-transparent focus:border-customyellow border-3;
 }
 
 .invalid-input {
   @apply border-red-600 border-3 focus:border-red-600;
 }
-
 </style>
