@@ -7,18 +7,18 @@
     </h2>
     <form class="flex flex-col px-6 overflow-hidden" id="contact-form" name="contact" method="post" data-netlify-recaptcha="true" data-netlify="true" v-on:submit.prevent="onSubmit">
       <input type="hidden" name="form-name" value="contact">
-      <label class="mb-2">Name</label>
+      <label class="mb-2 mt-3.5">Name</label>
       <div  data-aos="fade" data-aos-duration="800" data-aos-anchor-placement="center-center">
         <input v-model="form.name" class="contact-input" type="text" placeholder="John Doe" name="name" required>
       </div>
-      <label class="mb-2">Email</label>
+      <label class="mb-2 mt-3.5">Email</label>
       <div class="relative inline-block">
         <div data-aos="fade" data-aos-duration="800" data-aos-anchor-placement="center-center">
-          <input v-model="form.email" v-bind:class="{ 'invalid-input': !validEmail }" class="contact-input" type="text" placeholder="johndoe@email.com" name="email" required>
+          <input v-model="form.email" v-bind:class="{ 'invalid-input': invalidEmail }" class="contact-input" type="text" placeholder="johndoe@email.com" name="email" required>
         </div>
-        <label v-if="!validEmail" class="absolute top-3 ml-36 bg-customred text-sm font-bold px-2 py-1 rounded">Not a valid email adres!</label>
+        <label v-if="invalidEmail" id="invalid-email-label">Not a valid email adres!</label>
       </div>
-      <label class="mb-2">Message</label>
+      <label class="mb-2 mt-3.5">Message</label>
       <div data-aos="fade" data-aos-duration="800" data-aos-anchor-placement="center-center">
         <textarea v-model="form.message" class="contact-textarea" style="min-height: 14rem; min-width: 16.5rem; max-width: 27rem" placeholder="Your message here" name="message" required></textarea>
       </div>
@@ -40,7 +40,7 @@ export default {
     return {
       showalert: false,
       formresponse: null,
-      validEmail: true,
+      invalidEmail: true,
       form: {
         name: "",
         email: "",
@@ -59,8 +59,8 @@ export default {
     },
 
     validateEmail: function (email) {
-      this.validEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
-      return this.validEmail;
+      this.invalidEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
+      return this.invalidEmail;
     },
 
     onSubmit: function () {
@@ -107,7 +107,7 @@ export default {
 <style scoped>
 
 .contact-input {
-  @apply p-2.5 rounded text-black mb-7 shadow-custombr outline-none border-transparent focus:border-customyellow border-3;
+  @apply p-2.5 rounded text-black mb-3.5 shadow-custombr outline-none border-transparent focus:border-customyellow border-3;
 }
 
 .contact-textarea {
@@ -117,6 +117,16 @@ export default {
 button:hover {
   transition: transform .1s;
   transform: scale(1.08);
+}
+
+#invalid-email-label {
+  @apply absolute top-3 ml-36 bg-customred text-sm font-bold px-2 py-1 rounded;
+}
+
+@media (max-width: 640px) {
+  #invalid-email-label {
+    @apply static top-0 ml-0 bg-customred text-sm font-bold px-2 py-1 rounded;
+  }
 }
 
 .invalid-input {
