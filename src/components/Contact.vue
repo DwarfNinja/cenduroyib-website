@@ -8,18 +8,18 @@
     <form class="flex flex-col px-6 overflow-hidden" id="contact-form" name="contact" method="post" data-netlify-recaptcha="true" data-netlify="true" v-on:submit.prevent="onSubmit">
       <input type="hidden" name="form-name" value="contact">
       <label class="mb-2 mt-3.5">Name</label>
-      <div  data-aos="fade" data-aos-duration="800" data-aos-anchor-placement="center-center">
+      <div  data-aos="fade" data-aos-duration="800" data-aos-anchor="#contact" data-aos-anchor-placement="center-center">
         <input v-model="form.name" class="contact-input" type="text" placeholder="John Doe" name="name" required>
       </div>
       <label class="mb-2 mt-3.5">Email</label>
       <div class="relative inline-block">
-        <div data-aos="fade" data-aos-duration="800" data-aos-anchor-placement="center-center">
+        <div data-aos="fade" data-aos-duration="800" data-aos-anchor="#contact" data-aos-anchor-placement="center-center">
           <input v-model="form.email" v-bind:class="{ 'invalid-input': invalidEmail }" class="contact-input" type="text" placeholder="johndoe@email.com" name="email" required>
         </div>
         <label v-if="invalidEmail" id="invalid-email-label">Not a valid email adres!</label>
       </div>
       <label class="mb-2 mt-3.5">Message</label>
-      <div data-aos="fade" data-aos-duration="800" data-aos-anchor-placement="center-center">
+      <div data-aos="fade" data-aos-duration="800" data-aos-anchor="#contact" data-aos-anchor-placement="center-center">
         <textarea v-model="form.message" class="contact-textarea" style="min-height: 14rem; min-width: 16.5rem; max-width: 27rem" placeholder="Your message here" name="message" required></textarea>
       </div>
       <div data-netlify-recaptcha="true"></div>
