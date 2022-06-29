@@ -1,5 +1,5 @@
 <template>
-  <Alert v-if="showalert" :formresponse="formresponse"></Alert>
+  <Alert v-if="showAlert" :formresponse="formResponse"></Alert>
   <div hidden class="bg-customgreen"></div>
   <section class="mb-44" id="contact">
     <h2 class="text-2xl mb-14 underline-h2">
@@ -38,8 +38,8 @@ export default {
   components: {Alert},
   data() {
     return {
-      showalert: false,
-      formresponse: null,
+      showAlert: false,
+      formResponse: null,
       invalidEmail: true,
       form: {
         name: "",
@@ -63,9 +63,15 @@ export default {
       return this.invalidEmail;
     },
 
+    createAlert: function (formResponse) {
+      this.showAlert = true;
+      this.formResponse = formResponse
+      window.setTimeout(() => {
+        this.showAlert = false;
+      }, 6000);
+    },
+
     onSubmit: function () {
-
-
       if (this.validateEmail(this.form.email) === false) {
         console.log("Entered email is not a valid email");
         return;
@@ -83,16 +89,14 @@ export default {
       fetch('/', options)
           .then((response) => {
             if (response.ok) {
-              this.formresponse = "success";
-              this.showalert = true;
+              this.createAlert("success");
             }
             else {
               throw response;
             }
           })
           .catch((error) => {
-            this.formresponse = "fail";
-            this.showalert = true;
+            this.createAlert("fail");
             console.log(error);
           });
     }
@@ -132,4 +136,5 @@ button:hover {
 .invalid-input {
   @apply border-red-600 border-4 focus:border-red-600;
 }
+
 </style>
