@@ -142,7 +142,6 @@ export default {
 </script>
 
 <style scoped>
-
 #services-grid-container {
   grid-template-columns: repeat(2, minmax(auto, 38rem));
 }
@@ -176,5 +175,4 @@ export default {
     padding: 0.5rem 0.8rem 1.3rem 0.8rem;
   }
 }
-
 </style>

@@ -1,76 +1,134 @@
 <template>
-  <section class="mb-52" id="skills">
-    <h2 class="text-2xl mb-10 underline-h2" id="skills-header" data-aos="fade-up" data-aos-duration="800" data-aos-anchor-placement="center-center">Skills</h2>
-    <div class="relative max-w-4xl m-auto" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500" data-aos-anchor-placement="top-center" >
-      <div class="flex flex-wrap justify-center max-w-4xl" style="grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));">
-        <SkillCard class="skillcard" :skill="java"></SkillCard>
-        <SkillCard class="skillcard" :skill="python"></SkillCard>
-        <SkillCard class="skillcard" :skill="git"></SkillCard>
-        <SkillCard class="skillcard" :skill="godot"></SkillCard>
-        <SkillCard class="skillcard" :skill="json"></SkillCard>
-        <SkillCard class="skillcard" :skill="javascript"></SkillCard>
-        <SkillCard class="skillcard" :skill="html"></SkillCard>
-        <SkillCard class="skillcard" :skill="css"></SkillCard>
+  <section id="skills">
+    <h2 class="text-2xl mb-16 underline-h2" data-aos="fade-up" data-aos-duration="800" data-aos-anchor-placement="center-center">Skills</h2>
+    <div>
+      <Toggle v-model="toggleValue" on-label="Languages" off-label="Technologies"
+              data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500" data-aos-anchor-placement="top-center"
+              class="font-bold mb-5" :classes="{
+  container: 'inline-block rounded-full outline-none',
+  toggle: 'flex w-52 h-10 rounded-full relative cursor-pointer transition items-center box-content border-3 text-xs leading-none',
+  toggleOn: 'bg-customlightpurple border-customlightpurple justify-start text-white',
+  toggleOff: 'bg-customlightpurple border-customlightpurple justify-end text-white',
+  handle: 'inline-block bg-white w-16 h-10 top-0 rounded-full absolute transition-all',
+  handleOn: 'left-full transform -translate-x-full duration-300',
+  handleOff: 'left-0 transform translate-x-0 duration-300',
+  label: 'text-center p-5 whitespace-nowrap select-none text-base'}"
+      />
+    </div>
+    <div class="relative min-h-full max-w-4xl m-auto" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500" data-aos-anchor-placement="top-center">
+      <div class="flex justify-start align-top h-full pt-6 pb-44">
+        <div class="flex flex-wrap mx-auto mb-auto justify-center max-w-4xl" style="grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));">
+          <SkillCard v-for="skill in languages" v-show="toggleValue" class="skillcard" :skill="skill"></SkillCard>
+          <SkillCard v-for="skill in technologies" v-show="!toggleValue" class="skillcard" :skill="skill"></SkillCard>
+        </div>
       </div>
     </div>
   </section>
 </template>
 
 <script>
+import Toggle from '@vueform/toggle'
 import SkillCard from "./SkillCard.vue";
 
 export default {
   name: "Skills",
-  components: {SkillCard},
+  components: {SkillCard, Toggle},
   data() {
     return {
-      java: {
-        name: "Java",
-        imgsrc: "java-logo.png",
-        text: "Statically typed backend language.",
-        exp: "1,5 years"
+      toggleValue: true,
+      languages: {
+        java: {
+          name: "Java",
+          imgsrc: "java-logo.png",
+          exp: "2.5 years",
+          level: "w-[80%]"
+        },
+        python: {
+          name: "Python",
+          imgsrc: "python-logo.png",
+          exp: "1 year",
+          level: "w-[55%]"
+        },
+        dart: {
+          name: "Dart",
+          imgsrc: "dart-logo.png",
+          exp: "0,5 year",
+          level: "w-[60%]"
+        },
+        csharp: {
+          name: "C#",
+          imgsrc: "csharp-logo.png",
+          exp: "1 year",
+          level: "w-[80%]"
+        },
+        javascript: {
+          name: "JavaScript",
+          imgsrc: "javascript-logo.png",
+          exp: "1,5 years",
+          level: "w-[65%]"
+        },
+        html: {
+          name: "HTML",
+          imgsrc: "html-logo.png",
+          exp: "1,5 years",
+          level: "w-[60%]"
+        },
+        css: {
+          name: "CSS",
+          imgsrc: "css-logo.png",
+          exp: "1,5 years",
+          level: "w-[60%]"
+        },
       },
-      python: {
-        name: "Python",
-        imgsrc: "python-logo.png",
-        text: "Dynamically typed backend language.",
-        exp: "1 year"
-      },
-      git: {
-        name: "Git",
-        imgsrc: "git-logo.png",
-        text: "Version control system.",
-        exp: "1,5 year"
-      },
-      godot: {
-        name: "Godot",
-        imgsrc: "godot-logo.png",
-        text: "Object orientated game Engine.",
-        exp: "2 years"
-      },
-      json: {
-        name: "JSON",
-        imgsrc: "json-logo.png",
-        text: "Data interchange format.",
-        exp: "1,5 years"
-      },
-      javascript: {
-        name: "Javascript",
-        imgsrc: "javascript-logo.png",
-        text: "Dynamically typed frontend language.",
-        exp: "1 years"
-      },
-      html: {
-        name: "HTML",
-        imgsrc: "html-logo.png",
-        text: "Frontend markup language.",
-        exp: "1,5 years"
-      },
-      css: {
-        name: "CSS",
-        imgsrc: "css-logo.png",
-        text: "Frontend styling language.",
-        exp: "1,5 years"
+      technologies: {
+        flutter: {
+          name: "Flutter",
+          imgsrc: "flutter-logo.png",
+          exp: "0,5 years",
+          level: "w-[65%]"
+        },
+        godot: {
+          name: "Godot",
+          imgsrc: "godot-logo.png",
+          exp: "3 years",
+          level: "w-[90%]"
+        },
+        jira: {
+          name: "Jira",
+          imgsrc: "jira-logo.png",
+          exp: "1 year",
+          level: "w-[60%]"
+        },
+        figma: {
+          name: "Figma",
+          imgsrc: "figma-logo.png",
+          exp: "1 year",
+          level: "w-[65%]"
+        },
+        vuejs: {
+          name: "VueJs",
+          imgsrc: "vue-logo.png",
+          exp: "1.5 year",
+          level: "w-[65%]"
+        },
+        springboot: {
+          name: "Spring Boot",
+          imgsrc: "springboot-logo.png",
+          exp: "1.5 years",
+          level: "w-[55%]"
+        },
+        git: {
+          name: "Git",
+          imgsrc: "git-logo.png",
+          exp: "2 years",
+          level: "w-[70%]"
+        },
+        jersey: {
+          name: "Jersey",
+          imgsrc: "eclipsejersey-logo.png",
+          exp: "1 year",
+          level: "w-[40%]"
+        }
       },
       isMobile: false
     }
@@ -87,7 +145,7 @@ export default {
 
     let skillcards = document.querySelectorAll('.skillcard');
     skillcards.forEach(skillcard => {
-      skillcard.addEventListener('click', function (event) {
+      skillcard.addEventListener('click', function () {
           flipCard(skillcard, !skillcard.classList.contains("flipped"))
       })
     })
@@ -98,7 +156,7 @@ export default {
 
     let isMobile = false
     checkIfMobile()
-    window.addEventListener('resize', () => {checkIfMobile})
+    window.addEventListener('resize', () => {checkIfMobile()})
     function checkIfMobile() {
       if (window.matchMedia("(min-width: 640px)").matches) {
         if (isMobile === true) {
@@ -121,11 +179,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-
-img {
-  width: 200px;
-}
-
-</style>

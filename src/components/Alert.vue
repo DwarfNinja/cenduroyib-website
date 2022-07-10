@@ -1,8 +1,8 @@
 <template>
   <div :class="`fixed ${alertDataDic[formresponse].colour} p-3 sm:p-5 top-5 left-1/20 sm:left-auto right-1/20 sm:right-2 rounded z-10`">
-    <div class=""></div>
+    <div></div>
     <span :class="`${alertDataDic[formresponse].icon} mr-2`"></span>
-    <span id="alert-message">{{ alertDataDic[formresponse].message }}</span>
+    <span>{{ alertDataDic[formresponse].message }}</span>
   </div>
 </template>
 
@@ -30,7 +30,6 @@ export default {
 </script>
 
 <style scoped>
-
 div {
   animation: slideDown 0.6s ease-in-out forwards, slideDown 0.6s 4s ease-in-out reverse forwards;
 }
@@ -58,5 +57,4 @@ div {
     transform: translateY(0%);
   }
 }
-
 </style>

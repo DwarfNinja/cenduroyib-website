@@ -35,5 +35,4 @@ a {
   text-underline-offset: 0.3rem;
   text-decoration-thickness: 2px;
 }
-
 </style>
