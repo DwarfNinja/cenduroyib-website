@@ -1,16 +1,17 @@
 <template>
-<!--  <section class="mb-52" id="skills">-->
   <section id="skills">
     <h2 class="text-2xl mb-16 underline-h2" data-aos="fade-up" data-aos-duration="800" data-aos-anchor-placement="center-center">Skills</h2>
     <div>
-      <Toggle v-model="toggleValue" on-label="Languages" off-label="Technologies" class="font-bold mb-5" :classes="{
+      <Toggle v-model="toggleValue" on-label="Languages" off-label="Technologies"
+              data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500" data-aos-anchor-placement="top-center"
+              class="font-bold mb-5" :classes="{
   container: 'inline-block rounded-full outline-none',
   toggle: 'flex w-52 h-10 rounded-full relative cursor-pointer transition items-center box-content border-3 text-xs leading-none',
   toggleOn: 'bg-customlightpurple border-customlightpurple justify-start text-white',
   toggleOff: 'bg-customlightpurple border-customlightpurple justify-end text-white',
   handle: 'inline-block bg-white w-16 h-10 top-0 rounded-full absolute transition-all',
-  handleOn: 'left-full transform -translate-x-full',
-  handleOff: 'left-0',
+  handleOn: 'left-full transform -translate-x-full duration-300',
+  handleOff: 'left-0 transform translate-x-0 duration-300',
   label: 'text-center p-5 whitespace-nowrap select-none text-base'}"
       />
     </div>
