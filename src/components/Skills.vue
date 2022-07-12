@@ -1,6 +1,6 @@
 <template>
   <section id="skills">
-    <h2 id="skills-h2" class="text-2xl mb-16 underline-custom" data-aos="fade-up" data-aos-duration="800" data-aos-anchor-placement="center-center">Skills</h2>
+    <h2 id="skills-h2" class="text-2xl mb-8 pb-2.5 underline-custom" data-aos="fade-up" data-aos-duration="800" data-aos-anchor-placement="center-center">Skills</h2>
     <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="500" data-aos-anchor="#skills-h2" data-aos-anchor-placement="center-center">
       <div>
         <Toggle v-model="toggleValue" on-label="Languages" off-label="Technologies" class="font-bold mb-5" :classes="{
