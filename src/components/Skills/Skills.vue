@@ -15,7 +15,7 @@
         />
       </div>
       <div class="relative min-h-full max-w-4xl m-auto">
-        <div class="flex justify-start align-top h-full pt-6 pb-44">
+        <div class="flex justify-start align-top h-full pt-6 pb-44 px-3 lgph:px-5">
           <div class="flex flex-wrap mx-auto mb-auto justify-center max-w-4xl" style="grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));">
             <SkillCard v-for="skill in languages" v-show="toggleValue" class="skillcard" :skill="skill"></SkillCard>
             <SkillCard v-for="skill in technologies" v-show="!toggleValue" class="skillcard" :skill="skill"></SkillCard>
@@ -158,7 +158,7 @@ export default {
     checkIfMobile()
     window.addEventListener('resize', () => {checkIfMobile()})
     function checkIfMobile() {
-      if (window.matchMedia("(min-width: 640px)").matches) {
+      if (window.matchMedia("(min-width: 1024px)").matches) {
         if (isMobile === true) {
           skillcards.forEach(skillcard => {
             skillcard.vanillaTilt.settings.scale = 1.25;
