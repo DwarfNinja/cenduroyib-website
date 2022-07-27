@@ -2,26 +2,36 @@
   <Alert v-if="showAlert" :formresponse="formResponse"></Alert>
   <div hidden class="bg-customgreen"></div>
   <section class="mb-44" id="contact">
-    <h2 class="text-2xl mb-14 underline-h2">
-      Contact me
-    </h2>
-    <form class="flex flex-col px-6 overflow-hidden" id="contact-form" name="contact" method="post" data-netlify-recaptcha="true" data-netlify="true" v-on:submit.prevent="onSubmit">
+    <h2 id="contact-h2" class="text-2xl mb-5 pb-2.5 underline-custom" data-aos="fade-up" data-aos-duration="800" data-aos-anchor-placement="center-center">Contact me</h2>
+    <form class="flex flex-col px-6 overflow-hidden" id="contact-form" name="contact" method="post"
+          data-netlify-recaptcha="true" data-netlify="true" v-on:submit.prevent="onSubmit"
+          data-aos="fade-up" data-aos-duration="800" data-aos-delay="500" data-aos-anchor="#contact-h2" data-aos-anchor-placement="center-center">
       <input type="hidden" name="form-name" value="contact">
-      <label class="mb-2 mt-3.5">Name</label>
-      <div  data-aos="fade" data-aos-duration="800" data-aos-anchor="#contact" data-aos-anchor-placement="center-center">
-        <input v-model="form.name" class="contact-input" type="text" placeholder="John Doe" name="name" required>
-      </div>
-      <label class="mb-2 mt-3.5">Email</label>
-      <div class="relative inline-block">
-        <div data-aos="fade" data-aos-duration="800" data-aos-anchor="#contact" data-aos-anchor-placement="center-center">
-          <input v-model="form.email" v-bind:class="{ 'invalid-input': !validEmail }" class="contact-input" type="text" placeholder="johndoe@email.com" name="email" required>
+
+      <div>
+        <label class="mb-2 mt-3.5 block">Name</label>
+        <div>
+          <input v-model="form.name" class="contact-input" type="text" placeholder="John Doe" name="name" required>
         </div>
-        <label v-if="!validEmail" class="static sm:absolute top-0 sm:top-3 ml-0 sm:ml-36 bg-customred text-sm font-bold px-2 py-1 rounded">Not a valid email adres!</label>
       </div>
-      <label class="mb-2 mt-3.5">Message</label>
-      <div data-aos="fade" data-aos-duration="800" data-aos-anchor="#contact" data-aos-anchor-placement="center-center">
-        <textarea v-model="form.message" class="contact-textarea" style="min-height: 14rem; min-width: 16.5rem; max-width: 27rem" placeholder="Your message here" name="message" required></textarea>
+
+      <div>
+        <label class="mb-2 mt-3.5 block">Email</label>
+        <div class="inline-block">
+          <div>
+            <input v-model="form.email" v-bind:class="{ 'invalid-input': !validEmail }" class="contact-input" type="text" placeholder="johndoe@email.com" name="email" required>
+          </div>
+          <label v-if="!validEmail" class="static sm:absolute top-0 sm:top-3 ml-0 sm:ml-36 bg-customred text-sm font-bold px-2 py-1 rounded">Not a valid email adres!</label>
+        </div>
       </div>
+
+      <div>
+        <label class="mb-2 mt-3.5 block">Message</label>
+        <div>
+          <textarea v-model="form.message" class="contact-textarea" style="min-height: 14rem; min-width: 16.5rem; max-width: 27rem" placeholder="Your message here" name="message" required></textarea>
+        </div>
+      </div>
+
       <div data-netlify-recaptcha="true"></div>
       <div>
         <button class="px-7 py-3.5 mb-10 rounded bg-white text-black font-bold shadow-custombr transition-all transform duration-100 hover:scale-105" type="submit">Send!</button>

@@ -4,7 +4,7 @@
 
 @layer utilities {
 
-    .underline-h2 {
+    .underline-custom {
         text-decoration-line: underline;
         text-decoration-color: #F7B801;
         text-underline-offset: 0.8rem;

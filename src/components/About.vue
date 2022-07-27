@@ -1,10 +1,9 @@
 <template>
-  <section id="about-website" class="mb-20"
-           data-aos="fade-up" data-aos-duration="800" data-aos-anchor-placement="top-center">
-    <h2 class="text-2xl mb-10 underline-h2">
+  <section id="about-website" class="mb-20">
+    <h2 id="about-h2" class="text-2xl mb-6 pb-2.5 underline-custom" data-aos="fade-up" data-aos-duration="800" data-aos-anchor-placement="top-center">
       About this website
     </h2>
-    <div class="mx-auto px-8 w-full" style="max-width: 55rem">
+    <div class="mx-auto px-8 w-full" style="max-width: 55rem" data-aos="fade-up" data-aos-duration="800" data-aos-delay="500" data-aos-anchor="#about-h2" data-aos-anchor-placement="top-center">
       <p>
         This website was completely built by me during the summer holiday of 2021.
         Originally this website was built with pure vanilla HTML, CSS and Javascript but has afterwards been fully overhauled and

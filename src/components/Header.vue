@@ -4,7 +4,7 @@
         <ul id="header-menu" class="flex flex-wrap gap-y-2 justify-center m-auto">
           <li><a class="header-menu-item" href="#title">Home</a></li>
           <li><a class="header-menu-item"  href="#skills">Skills</a></li>
-          <li><a class="header-menu-item"  href="#services">Services</a></li>
+          <li><a class="header-menu-item"  href="#projects">Projects</a></li>
           <li><a class="header-menu-item"  href="#contact">Contact</a></li>
           <li><a class="header-menu-item"  href="#about-website">About</a></li>
         </ul>
