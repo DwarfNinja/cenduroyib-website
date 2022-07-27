@@ -61,6 +61,14 @@ export default {
   },
   mounted() {
     if (window.matchMedia("(min-width: 768px)").matches) {
+      VanillaTilt.init(document.querySelectorAll(".projectcard"), {
+        scale: 1.10,
+        max: 0,
+        transition: true,
+        speed: 300,
+        easing: "cubic-bezier(.03,.98,.52,.99)"
+      });
+
       let projectCards = Array.from(document.getElementsByClassName("projectcard"));
       projectCards.forEach(projectCard => {
         projectCard.style.transitionDelay = projectCard.dataset.animdelay.toString() + "ms";
