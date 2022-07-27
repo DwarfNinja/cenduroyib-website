@@ -1,16 +1,16 @@
 <template>
   <section class="bg-white text-black w-full md:w-[93%] py-16 mx-auto mb-52 sm:max-w-8xl shadow-custombr" id="projects">
-    <h2 class="text-2xl mb-12 underline-custom">
+    <h2 class="text-2xl mb-12 underline-custom" data-aos="fade-up" data-aos-duration="800" data-aos-anchor-placement="center-center">
       Projects
     </h2>
       <div class="flex justify-start align-top h-full px-5 md:px-12 lg:px-16">
         <div class="flex flex-wrap mx-auto mb-auto justify-center" style="grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));">
-          <ProjectCard :project="projects.loopsnelheid"></ProjectCard>
-          <ProjectCard :project="projects.cloakandhammer"></ProjectCard>
-          <ProjectCard :project="projects.blackjack"></ProjectCard>
-          <ProjectCard :project="projects.lingo"></ProjectCard>
-          <ProjectCard :project="projects.tetris"></ProjectCard>
-          <ProjectCard :project="projects.cenduroyib"></ProjectCard>
+          <ProjectCard class="projectcard" :project="projects.loopsnelheid" data-animdelay="0"></ProjectCard>
+          <ProjectCard class="projectcard" :project="projects.cloakandhammer" data-animdelay="300"></ProjectCard>
+          <ProjectCard class="projectcard" :project="projects.blackjack" data-animdelay="600"></ProjectCard>
+          <ProjectCard class="projectcard" :project="projects.lingo" data-animdelay="900"></ProjectCard>
+          <ProjectCard class="projectcard" :project="projects.tetris" data-animdelay="1200"></ProjectCard>
+          <ProjectCard class="projectcard" :project="projects.cenduroyib" data-animdelay="1500"></ProjectCard>
         </div>
       </div>
   </section>
@@ -58,10 +58,15 @@ export default {
         },
       }
     }
+  },
+  mounted() {
+    if (window.matchMedia("(min-width: 768px)").matches) {
+      let projectCards = Array.from(document.getElementsByClassName("projectcard"));
+      projectCards.forEach(projectCard => {
+        projectCard.style.transitionDelay = projectCard.dataset.animdelay.toString() + "ms";
+      });
+    }
   }
 }
 </script>
 
-<style scoped>
-
-</style>
