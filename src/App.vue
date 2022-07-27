@@ -4,7 +4,7 @@
     <Title></Title>
     <WhoAmI></WhoAmI>
     <Skills></Skills>
-    <Services></Services>
+    <Projects></Projects>
     <Contact></Contact>
     <About></About>
   </div>
@@ -16,7 +16,7 @@ import Header from "./components/Header.vue";
 import Title from "./components/Title.vue";
 import WhoAmI from "./components/WhoAmI.vue";
 import Skills from "./components/Skills.vue";
-import Services from "./components/Services.vue";
+import Projects from "./components/Projects/Projects.vue";
 import Contact from "./components/Contact.vue";
 import About from "./components/About.vue"
 import Footer from "./components/Footer.vue";
@@ -29,7 +29,7 @@ export default  {
     Title,
     WhoAmI,
     Skills,
-    Services,
+    Projects,
     About,
     Footer
   },
