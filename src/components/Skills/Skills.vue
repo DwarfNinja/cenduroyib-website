@@ -1,5 +1,5 @@
 <template>
-  <section id="skills">
+  <section id="skills" class="scroll-m-28 lg:scroll-m-40 mb-48">
     <h2 id="skills-h2" class="text-2xl mb-8 pb-2.5 underline-custom" data-aos="fade-up" data-aos-duration="800" data-aos-anchor-placement="center-center">Skills</h2>
     <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="500" data-aos-anchor="#skills-h2" data-aos-anchor-placement="center-center">
       <div>
@@ -15,7 +15,7 @@
         />
       </div>
       <div class="relative min-h-full max-w-4xl m-auto">
-        <div class="flex justify-start align-top h-full pt-6 pb-44 px-3 lgph:px-5">
+        <div class="flex justify-start align-top h-full pt-6 px-3 lgph:px-5">
           <div class="flex flex-wrap mx-auto mb-auto justify-center max-w-4xl" style="grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));">
             <SkillCard v-for="skill in languages" v-show="toggleValue" class="skillcard" :skill="skill"></SkillCard>
             <SkillCard v-for="skill in technologies" v-show="!toggleValue" class="skillcard" :skill="skill"></SkillCard>

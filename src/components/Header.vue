@@ -3,6 +3,7 @@
     <nav class="flex bg-white w-full max-w-3xl justify-center shadow-customb rounded-2xl">
         <ul id="header-menu" class="flex flex-wrap gap-y-2 justify-center m-auto">
           <li><a class="header-menu-item" href="#title">Home</a></li>
+          <li><a class="header-menu-item" href="#who">Who am I?</a></li>
           <li><a class="header-menu-item"  href="#skills">Skills</a></li>
           <li><a class="header-menu-item"  href="#projects">Projects</a></li>
           <li><a class="header-menu-item"  href="#contact">Contact</a></li>
