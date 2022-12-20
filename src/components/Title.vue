@@ -1,5 +1,5 @@
 <template>
-  <section id="title">
+  <section id="title" class="scroll-my-36">
     <div class="mb-72">
       <h1 class="text-white text-4xl sm:text-5xl font-normal mb-4 pb-2.5 underline-custom" data-aos="fade-up" data-aos-duration="800">Cendur Oyib</h1>
       <h2 id="subtitle" class="text-white text-lg sm:text-2xl font-light"></h2>
