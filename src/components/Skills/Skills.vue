@@ -1,24 +1,25 @@
 <template>
-<!--  <section class="mb-52" id="skills">-->
-  <section id="skills">
-    <h2 class="text-2xl mb-16 underline-h2" data-aos="fade-up" data-aos-duration="800" data-aos-anchor-placement="center-center">Skills</h2>
-    <div>
-      <Toggle v-model="toggleValue" on-label="Languages" off-label="Technologies" class="font-bold mb-5" :classes="{
-  container: 'inline-block rounded-full outline-none',
-  toggle: 'flex w-52 h-10 rounded-full relative cursor-pointer transition items-center box-content border-3 text-xs leading-none',
-  toggleOn: 'bg-customlightpurple border-customlightpurple justify-start text-white',
-  toggleOff: 'bg-customlightpurple border-customlightpurple justify-end text-white',
-  handle: 'inline-block bg-white w-16 h-10 top-0 rounded-full absolute transition-all',
-  handleOn: 'left-full transform -translate-x-full',
-  handleOff: 'left-0',
-  label: 'text-center p-5 whitespace-nowrap select-none text-base'}"
-      />
-    </div>
-    <div class="relative min-h-full max-w-4xl m-auto" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500" data-aos-anchor-placement="top-center">
-      <div class="flex justify-start align-top h-full pt-6 pb-44">
-        <div class="flex flex-wrap mx-auto mb-auto justify-center max-w-4xl" style="grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));">
-          <SkillCard v-for="skill in languages" v-show="toggleValue" class="skillcard" :skill="skill"></SkillCard>
-          <SkillCard v-for="skill in technologies" v-show="!toggleValue" class="skillcard" :skill="skill"></SkillCard>
+  <section id="skills" class="scroll-m-28 lg:scroll-m-40 mb-48">
+    <h2 id="skills-h2" class="h2-custom mb-8" data-aos="fade-up" data-aos-duration="800" data-aos-anchor-placement="center-center">Skills</h2>
+    <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="500" data-aos-anchor="#skills-h2" data-aos-anchor-placement="center-center">
+      <div>
+        <Toggle v-model="toggleValue" on-label="Languages" off-label="Technologies" class="font-bold mb-5" :classes="{
+          container: 'inline-block rounded-full outline-none',
+          toggle: 'flex w-52 h-10 rounded-full relative cursor-pointer transition items-center box-content border-3 text-xs leading-none',
+          toggleOn: 'bg-customlightpurple border-customlightpurple justify-start text-white',
+          toggleOff: 'bg-customlightpurple border-customlightpurple justify-end text-white',
+          handle: 'inline-block bg-white w-16 h-10 top-0 rounded-full absolute transition-all',
+          handleOn: 'left-full transform -translate-x-full duration-300',
+          handleOff: 'left-0 transform translate-x-0 duration-300',
+          label: 'text-center p-5 whitespace-nowrap select-none text-base'}"
+        />
+      </div>
+      <div class="relative min-h-full max-w-4xl m-auto">
+        <div class="flex justify-start align-top h-full pt-6 px-3 lgph:px-5">
+          <div class="flex flex-wrap mx-auto mb-auto justify-center max-w-4xl" style="grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));">
+            <SkillCard v-for="skill in languages" v-show="toggleValue" class="skillcard" :skill="skill"></SkillCard>
+            <SkillCard v-for="skill in technologies" v-show="!toggleValue" class="skillcard" :skill="skill"></SkillCard>
+          </div>
         </div>
       </div>
     </div>
@@ -157,7 +158,7 @@ export default {
     checkIfMobile()
     window.addEventListener('resize', () => {checkIfMobile()})
     function checkIfMobile() {
-      if (window.matchMedia("(min-width: 640px)").matches) {
+      if (window.matchMedia("(min-width: 1024px)").matches) {
         if (isMobile === true) {
           skillcards.forEach(skillcard => {
             skillcard.vanillaTilt.settings.scale = 1.25;

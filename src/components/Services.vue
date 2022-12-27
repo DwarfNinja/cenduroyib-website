@@ -1,6 +1,6 @@
 <template>
   <section class="bg-white text-black w-full md:w-11/12 p-5 mx-auto mb-52 sm:p-14 sm:max-w-8xl shadow-custombr" id="services">
-    <h2 class="text-2xl mb-16 underline-h2">
+    <h2 class="h2-custom mb-16">
       Services
     </h2>
     <div class="grid justify-center gap-7 sm:gap-14" id="services-grid-container">
@@ -15,7 +15,7 @@
               stroke="60"
               style="width:75px;height:75px;">
           </lord-icon>
-          <h2 class="text-2xl mb-8 underline-h2" style="text-decoration-color: white;">
+          <h2 class="h2-custom mb-8" style="text-decoration-color: white;">
             Custom Software
           </h2>
         </div>
@@ -40,7 +40,7 @@
               stroke="50"
               style="width:75px;height:75px">
           </lord-icon>
-          <h2 class="text-2xl mb-12 underline-h2" style="text-decoration-color: black;">
+          <h2 class="h2-custom mb-12" style="text-decoration-color: black;">
             Website
           </h2>
         </div>
