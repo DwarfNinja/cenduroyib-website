@@ -4,7 +4,7 @@
          data-aos="fade-up" data-aos-duration="800" data-aos-anchor-placement="top-center">
     <div>
       <h2 id="who-h2" class="h2-custom mb-6" data-aos="fade-up" data-aos-duration="800" data-aos-anchor-placement="center-center">Who am I?</h2>
-      <p class="mx-auto px-6 sm:px-8" style="max-width: 60rem"
+      <p class="p-custom mx-auto px-6 sm:px-8" style="max-width: 60rem"
          data-aos="fade-up" data-aos-duration="800" data-aos-delay="500" data-aos-anchor="#who-h2" data-aos-anchor-placement="center-center">
         Hi, my name is Cendur, I am {{ age }} years old and a third year student studying
         Software Development at the University of Applied Sciences in Utrecht - the Netherlands.

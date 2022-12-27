@@ -14,4 +14,8 @@
     .h2-custom {
         @apply text-xl smph:text-2xl pb-2.5 underline-custom
     }
+
+    .p-custom {
+        @apply text-sm smph:text-base
+    }
 }
