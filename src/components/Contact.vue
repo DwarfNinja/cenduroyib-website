@@ -2,7 +2,7 @@
   <Alert v-if="showAlert" :formresponse="formResponse"></Alert>
   <div hidden class="bg-customgreen"></div>
   <section id="contact" class="scroll-m-28 mb-44">
-    <h2 id="contact-h2" class="text-2xl mb-5 pb-2.5 underline-custom" data-aos="fade-up" data-aos-duration="800" data-aos-anchor-placement="center-center">Contact me</h2>
+    <h2 id="contact-h2" class="h2-custom mb-5" data-aos="fade-up" data-aos-duration="800" data-aos-anchor-placement="center-center">Contact me</h2>
     <form class="flex flex-col px-6 overflow-hidden" id="contact-form" name="contact" method="post"
           data-netlify-recaptcha="true" data-netlify="true" v-on:submit.prevent="onSubmit"
           data-aos="fade-up" data-aos-duration="800" data-aos-delay="500" data-aos-anchor="#contact-h2" data-aos-anchor-placement="center-center">

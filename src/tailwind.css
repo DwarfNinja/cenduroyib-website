@@ -10,4 +10,8 @@
         text-underline-offset: 0.8rem;
         text-decoration-thickness: 2px;
     }
+
+    .h2-custom {
+        @apply text-xl smph:text-2xl pb-2.5 underline-custom
+    }
 }
