@@ -3,7 +3,7 @@
     <h2 id="skills-h2" class="h2-custom mb-8" data-aos="fade-up" data-aos-duration="800" data-aos-anchor-placement="center-center">Skills</h2>
     <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="500" data-aos-anchor="#skills-h2" data-aos-anchor-placement="center-center">
       <div>
-        <Toggle v-model="toggleValue" on-label="Languages" off-label="Technologies" class="font-bold mb-5" :classes="{
+        <Toggle v-model="toggleValue" on-label="Technologies" off-label="Languages" class="font-bold mb-5" :classes="{
           container: 'inline-block rounded-full outline-none',
           toggle: 'flex w-52 h-10 rounded-full relative cursor-pointer transition items-center box-content border-3 text-xs leading-none',
           toggleOn: 'bg-customlightpurple border-customlightpurple justify-start text-white',
@@ -12,13 +12,17 @@
           handleOn: 'left-full transform -translate-x-full duration-300',
           handleOff: 'left-0 transform translate-x-0 duration-300',
           label: 'text-center p-5 whitespace-nowrap select-none text-base'}"
-        />
+        >
+          <template v-slot:label="{ checked, classList }">
+            <span id="toggle-label" :class="classList.label" v-bind:class="{'is-toggle-off': !toggleValue}">{{ checked ? 'Technologies' : 'Languages'}}</span>
+          </template>
+        </Toggle>
       </div>
       <div class="relative min-h-full max-w-4xl m-auto">
         <div class="flex justify-start align-top h-full pt-6 px-3 lgph:px-5">
           <div class="flex flex-wrap mx-auto mb-auto justify-center max-w-4xl" style="grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));">
-            <SkillCard v-for="skill in languages" v-show="toggleValue" class="skillcard" :skill="skill"></SkillCard>
-            <SkillCard v-for="skill in technologies" v-show="!toggleValue" class="skillcard" :skill="skill"></SkillCard>
+            <SkillCard v-for="skill in technologies" v-show="toggleValue" class="skillcard" :skill="skill"></SkillCard>
+            <SkillCard v-for="skill in languages" v-show="!toggleValue" class="skillcard" :skill="skill"></SkillCard>
           </div>
         </div>
       </div>
@@ -35,7 +39,7 @@ export default {
   components: {SkillCard, Toggle},
   data() {
     return {
-      toggleValue: true,
+      toggleValue: false,
       languages: {
         java: {
           name: "Java",
@@ -179,3 +183,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.is-toggle-off {
+  @apply mr-2;
+}
+</style>
