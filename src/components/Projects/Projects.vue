@@ -1,6 +1,6 @@
 <template>
-  <section class="bg-white text-black w-full md:w-[93%] py-16 mx-auto mb-52 sm:max-w-8xl shadow-custombr" id="projects">
-    <h2 class="text-2xl mb-12 underline-custom" data-aos="fade-up" data-aos-duration="800" data-aos-anchor-placement="center-center">
+  <section id="projects" class="scroll-m-16 lg:scroll-m-28 bg-white text-black w-full md:w-[93%] pt-9 pb-16 mx-auto mb-52 sm:max-w-8xl shadow-custombr">
+    <h2 class="h2-custom mb-8" data-aos="fade-up" data-aos-duration="800" data-aos-anchor-placement="center-center">
       Projects
     </h2>
       <div class="flex justify-start align-top h-full px-5 md:px-12 lg:px-16">
