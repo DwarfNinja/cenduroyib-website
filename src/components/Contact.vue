@@ -17,11 +17,11 @@
 
       <div>
         <label class="mb-2 mt-3.5 block">Email</label>
-        <div class="inline-block">
+        <div>
           <div>
-            <input v-model="form.email" v-bind:class="{ 'invalid-input': !validEmail }" class="contact-input" type="text" placeholder="johndoe@email.com" name="email" required>
+            <input v-model="form.email" v-bind:class="{ 'invalid-input': !validEmail }" class="contact-input w-full max-w-xs" type="text" placeholder="johndoe@email.com" name="email" required>
           </div>
-          <label v-if="!validEmail" class="static sm:absolute top-0 sm:top-3 ml-0 sm:ml-36 bg-customred text-sm font-bold px-2 py-1 rounded">Not a valid email adres!</label>
+          <label v-if="!validEmail" class="static top-0 sm:top-3 ml-0 bg-customred text-sm font-bold px-2 py-1 rounded">Not a valid email adres!</label>
         </div>
       </div>
 
@@ -78,7 +78,17 @@ export default {
       }, 6000);
     },
 
-    onSubmit() {
+    clearInputFields() {
+      let contactForm = document.getElementById("contact-form");
+      contactForm.reset();
+
+      Object.keys(this.form).forEach(key => {
+        this.form[key] = "";
+      });
+    },
+
+    onSubmit(event) {
+      event.preventDefault();
       if (this.validateEmail(this.form.email) === false) {
         console.log("Entered email is not a valid email");
         return;
@@ -97,6 +107,7 @@ export default {
           .then((response) => {
             if (response.ok) {
               this.createAlert("success");
+              this.clearInputFields();
             }
             else {
               throw response;
@@ -121,7 +132,7 @@ export default {
 }
 
 .contact-textarea {
-  @apply mb-10 p-3 rounded text-black max-h-80 w-full shadow-custombr outline-none border-transparent focus:border-customyellow border-3;
+  @apply mb-10 p-3 rounded text-black max-h-96 w-full shadow-custombr outline-none border-transparent focus:border-customyellow border-3;
 }
 
 .invalid-input {
