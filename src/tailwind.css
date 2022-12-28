@@ -4,10 +4,18 @@
 
 @layer utilities {
 
-    .underline-h2 {
+    .underline-custom {
         text-decoration-line: underline;
         text-decoration-color: #F7B801;
         text-underline-offset: 0.8rem;
         text-decoration-thickness: 2px;
+    }
+
+    .h2-custom {
+        @apply text-xl smph:text-2xl pb-2.5 underline-custom
+    }
+
+    .p-custom {
+        @apply text-sm smph:text-base
     }
 }
