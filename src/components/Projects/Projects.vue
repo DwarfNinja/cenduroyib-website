@@ -57,7 +57,7 @@ export default {
           desc: "Personal Website",
         },
       }
-    }
+    };
   },
   mounted() {
     if (window.matchMedia("(min-width: 768px)").matches) {

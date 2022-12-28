@@ -487,7 +487,7 @@ var VanillaTilt = (function () {
         flipElement(boolean) {
             this.settings.flip = boolean;
             this.setTransition();
-            this.forceUpdate()
+            this.forceUpdate();
         }
 
         static init(elements, settings) {
