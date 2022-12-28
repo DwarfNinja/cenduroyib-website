@@ -17,9 +17,9 @@
 
       <div>
         <label class="mb-2 mt-3.5 block">Email</label>
-        <div class="inline-block">
+        <div>
           <div>
-            <input v-model="form.email" v-bind:class="{ 'invalid-input': !validEmail }" class="contact-input" type="text" placeholder="johndoe@email.com" name="email" required>
+            <input v-model="form.email" v-bind:class="{ 'invalid-input': !validEmail }" class="contact-input w-full max-w-xs" type="text" placeholder="johndoe@email.com" name="email" required>
           </div>
           <label v-if="!validEmail" class="static sm:absolute top-0 sm:top-3 ml-0 sm:ml-36 bg-customred text-sm font-bold px-2 py-1 rounded">Not a valid email adres!</label>
         </div>
