@@ -8,7 +8,7 @@
       <p class="font-semibold">{{ skill.name }}</p>
       <p class="text-sm sm:text-base" style="transform: translateZ(10px);">Experience: <br>{{ experience }}</p>
       <p class="text-sm sm:text-base" style="transform: translateZ(10px);">Skill level:</p>
-      <div class="w-full bg-gray-300 rounded-2xl">
+      <div class="w-full bg-gray-300 rounded-2xl" style="transform: translateZ(10px);">
         <div :class="skill.level" class="text-right py-2 bg-customyellow text-white rounded-2xl"></div>
       </div>
     </div>
