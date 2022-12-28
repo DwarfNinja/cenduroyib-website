@@ -18,7 +18,20 @@
 <script>
 export default {
   name: "SkillCard",
-  props: ["skill"]
+  props: ["skill"],
+  computed: {
+    experience() {
+      let months = (this.skill.end.getFullYear() - this.skill.start.getFullYear()) * 12;
+      months -= this.skill.start.getMonth();
+      months += this.skill.end.getMonth();
+
+      let yearsDecimal = Math.round((months <= 0 ? 0 : months / 12) * 10) / 10;
+      let yearsDecimalRound = Math.round(yearsDecimal * 2) / 2;
+
+      let yearString = yearsDecimalRound === 1 ? "year" : "years";
+      return yearsDecimalRound + " " + yearString;
+    }
+  }
 }
 </script>
 

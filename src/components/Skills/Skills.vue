@@ -44,43 +44,50 @@ export default {
         java: {
           name: "Java",
           imgsrc: "java-logo.png",
-          exp: "2.5 years",
+          start: new Date("02/01/2020"),
+          end: new Date(Date.now()),
           level: "w-[80%]"
         },
         python: {
           name: "Python",
           imgsrc: "python-logo.png",
-          exp: "1 year",
+          start: new Date("01/20/2020"),
+          end: new Date("01/20/2021"),
           level: "w-[55%]"
         },
         dart: {
           name: "Dart",
           imgsrc: "dart-logo.png",
-          exp: "0,5 year",
+          start: new Date("03/10/2022"),
+          end: new Date(Date.now()),
           level: "w-[60%]"
         },
         csharp: {
           name: "C#",
           imgsrc: "csharp-logo.png",
-          exp: "1 year",
+          start: new Date("11/24/2021"),
+          end: new Date(Date.now()),
           level: "w-[80%]"
         },
         javascript: {
           name: "JavaScript",
           imgsrc: "javascript-logo.png",
-          exp: "1,5 years",
+          start: new Date("04/14/2020"),
+          end: new Date(Date.now()),
           level: "w-[65%]"
         },
         html: {
           name: "HTML",
           imgsrc: "html-logo.png",
-          exp: "1,5 years",
+          start: new Date("04/14/2020"),
+          end: new Date(Date.now()),
           level: "w-[60%]"
         },
         css: {
           name: "CSS",
           imgsrc: "css-logo.png",
-          exp: "1,5 years",
+          start: new Date("04/14/2020"),
+          end: new Date(Date.now()),
           level: "w-[60%]"
         },
       },
@@ -88,49 +95,57 @@ export default {
         flutter: {
           name: "Flutter",
           imgsrc: "flutter-logo.png",
-          exp: "0,5 years",
+          start: new Date("03/10/2022"),
+          end: new Date(Date.now()),
           level: "w-[65%]"
         },
         godot: {
           name: "Godot",
           imgsrc: "godot-logo.png",
-          exp: "3 years",
+          start: new Date("02/22/2020"),
+          end: new Date(Date.now()),
           level: "w-[90%]"
         },
         jira: {
           name: "Jira",
           imgsrc: "jira-logo.png",
-          exp: "1 year",
+          start: new Date("03/10/2022"),
+          end: new Date(Date.now()),
           level: "w-[60%]"
         },
         figma: {
           name: "Figma",
           imgsrc: "figma-logo.png",
-          exp: "1 year",
+          start: new Date("03/10/2022"),
+          end: new Date(Date.now()),
           level: "w-[65%]"
         },
         vuejs: {
           name: "VueJs",
           imgsrc: "vue-logo.png",
-          exp: "1.5 year",
+          start: new Date("08/16/2021"),
+          end: new Date(Date.now()),
           level: "w-[65%]"
         },
         springboot: {
           name: "Spring Boot",
           imgsrc: "springboot-logo.png",
-          exp: "1.5 years",
+          start: new Date("09/10/2021"),
+          end: new Date(Date.now()),
           level: "w-[55%]"
         },
         git: {
           name: "Git",
           imgsrc: "git-logo.png",
-          exp: "2 years",
+          start: new Date("01/20/2020"),
+          end: new Date(Date.now()),
           level: "w-[70%]"
         },
         jersey: {
           name: "Jersey",
           imgsrc: "eclipsejersey-logo.png",
-          exp: "1 year",
+          start: new Date("05/01/2020"),
+          end: new Date("07/01/2021"),
           level: "w-[40%]"
         }
       },
