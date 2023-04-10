@@ -60,7 +60,7 @@ export default {
           imgsrc: "dart-logo.png",
           start: new Date("03/10/2022"),
           end: new Date(Date.now()),
-          level: "w-[60%]"
+          level: "w-[80%]"
         },
         csharp: {
           name: "C#",
@@ -74,21 +74,21 @@ export default {
           imgsrc: "javascript-logo.png",
           start: new Date("04/14/2020"),
           end: new Date(Date.now()),
-          level: "w-[65%]"
+          level: "w-[70%]"
         },
         html: {
           name: "HTML",
           imgsrc: "html-logo.png",
           start: new Date("04/14/2020"),
           end: new Date(Date.now()),
-          level: "w-[60%]"
+          level: "w-[70%]"
         },
         css: {
           name: "CSS",
           imgsrc: "css-logo.png",
           start: new Date("04/14/2020"),
           end: new Date(Date.now()),
-          level: "w-[60%]"
+          level: "w-[70%]"
         },
       },
       technologies: {
@@ -97,7 +97,7 @@ export default {
           imgsrc: "flutter-logo.png",
           start: new Date("03/10/2022"),
           end: new Date(Date.now()),
-          level: "w-[65%]"
+          level: "w-[80%]"
         },
         godot: {
           name: "Godot",
@@ -125,7 +125,7 @@ export default {
           imgsrc: "figma-logo.png",
           start: new Date("03/10/2022"),
           end: new Date(Date.now()),
-          level: "w-[65%]"
+          level: "w-[75%]"
         },
         vuejs: {
           name: "VueJs",
