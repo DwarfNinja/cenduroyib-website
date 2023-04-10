@@ -1,6 +1,10 @@
 <template>
   <section id="skills" class="scroll-m-28 lg:scroll-m-40 mb-48">
     <h2 id="skills-h2" class="h2-custom mb-8" data-aos="fade-up" data-aos-duration="800" data-aos-anchor-placement="center-center">Skills</h2>
+      <p class="p-custom mx-auto px-6 sm:px-8 mb-8" style="max-width: 60rem"
+         data-aos="fade-up" data-aos-duration="800" data-aos-delay="500" data-aos-anchor="#skills-h2" data-aos-anchor-placement="center-center">
+          Below is a showcase of the skills I've acquired throughout the years. Flip a card over to view more info!
+      </p>
     <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="500" data-aos-anchor="#skills-h2" data-aos-anchor-placement="center-center">
       <div>
         <Toggle v-model="toggleValue" on-label="Technologies" off-label="Languages" class="font-bold mb-5" :classes="{
@@ -60,7 +64,7 @@ export default {
           imgsrc: "dart-logo.png",
           start: new Date("03/10/2022"),
           end: new Date(Date.now()),
-          level: "w-[60%]"
+          level: "w-[80%]"
         },
         csharp: {
           name: "C#",
@@ -74,21 +78,21 @@ export default {
           imgsrc: "javascript-logo.png",
           start: new Date("04/14/2020"),
           end: new Date(Date.now()),
-          level: "w-[65%]"
+          level: "w-[70%]"
         },
         html: {
           name: "HTML",
           imgsrc: "html-logo.png",
           start: new Date("04/14/2020"),
           end: new Date(Date.now()),
-          level: "w-[60%]"
+          level: "w-[70%]"
         },
         css: {
           name: "CSS",
           imgsrc: "css-logo.png",
           start: new Date("04/14/2020"),
           end: new Date(Date.now()),
-          level: "w-[60%]"
+          level: "w-[70%]"
         },
       },
       technologies: {
@@ -97,7 +101,7 @@ export default {
           imgsrc: "flutter-logo.png",
           start: new Date("03/10/2022"),
           end: new Date(Date.now()),
-          level: "w-[65%]"
+          level: "w-[80%]"
         },
         godot: {
           name: "Godot",
@@ -113,12 +117,19 @@ export default {
           end: new Date(Date.now()),
           level: "w-[60%]"
         },
+        docker: {
+            name: "Docker",
+            imgsrc: "docker-logo.png",
+            start: new Date("03/10/2022"),
+            end: new Date(Date.now()),
+            level: "w-[45%]"
+        },
         figma: {
           name: "Figma",
           imgsrc: "figma-logo.png",
           start: new Date("03/10/2022"),
           end: new Date(Date.now()),
-          level: "w-[65%]"
+          level: "w-[75%]"
         },
         vuejs: {
           name: "VueJs",
