@@ -113,6 +113,13 @@ export default {
           end: new Date(Date.now()),
           level: "w-[60%]"
         },
+        docker: {
+            name: "Docker",
+            imgsrc: "docker-logo.png",
+            start: new Date("03/10/2022"),
+            end: new Date(Date.now()),
+            level: "w-[45%]"
+        },
         figma: {
           name: "Figma",
           imgsrc: "figma-logo.png",
