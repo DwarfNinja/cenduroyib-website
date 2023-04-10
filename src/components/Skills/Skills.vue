@@ -1,6 +1,10 @@
 <template>
   <section id="skills" class="scroll-m-28 lg:scroll-m-40 mb-48">
     <h2 id="skills-h2" class="h2-custom mb-8" data-aos="fade-up" data-aos-duration="800" data-aos-anchor-placement="center-center">Skills</h2>
+      <p class="p-custom mx-auto px-6 sm:px-8 mb-8" style="max-width: 60rem"
+         data-aos="fade-up" data-aos-duration="800" data-aos-delay="500" data-aos-anchor="#skills-h2" data-aos-anchor-placement="center-center">
+          Below is a showcase of the skills I've acquired throughout the years. Flip a card over to view more info!
+      </p>
     <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="500" data-aos-anchor="#skills-h2" data-aos-anchor-placement="center-center">
       <div>
         <Toggle v-model="toggleValue" on-label="Technologies" off-label="Languages" class="font-bold mb-5" :classes="{
