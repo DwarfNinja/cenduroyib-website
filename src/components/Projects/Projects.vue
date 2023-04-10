@@ -1,8 +1,12 @@
 <template>
   <section id="projects" class="scroll-m-16 lg:scroll-m-28 bg-white text-black w-full md:w-[93%] pt-9 pb-16 mx-auto mb-52 sm:max-w-8xl shadow-custombr">
-    <h2 class="h2-custom mb-8" data-aos="fade-up" data-aos-duration="800" data-aos-anchor-placement="center-center">
+    <h2 id="projects-h2" class="h2-custom mb-8" data-aos="fade-up" data-aos-duration="800" data-aos-anchor-placement="center-center">
       Projects
     </h2>
+      <p class="p-custom mx-auto px-6 sm:px-8 mb-8" style="max-width: 60rem"
+         data-aos="fade-up" data-aos-duration="800" data-aos-delay="500" data-aos-anchor="#projects-h2" data-aos-anchor-placement="center-center">
+          A display of a few of my completed projects.
+      </p>
       <div class="flex justify-start align-top h-full px-5 md:px-12 lg:px-16">
         <div class="flex flex-wrap mx-auto mb-auto justify-center" style="grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));">
           <ProjectCard class="projectcard" :project="projects.loopsnelheid" data-animdelay="0"></ProjectCard>
