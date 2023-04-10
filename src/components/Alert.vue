@@ -24,7 +24,7 @@ export default {
           icon: "fas fa-times-circle"
         }
       }
-    }
+    };
   }
 }
 </script>

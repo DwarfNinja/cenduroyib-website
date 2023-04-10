@@ -20,7 +20,7 @@ export default {
   name: "WhoAmI",
   computed: {
     age() {
-      let dateOfBirth = new Date("01/07/2001")
+      let dateOfBirth = new Date("01/07/2001");
       let diffMs = (Date.now() - dateOfBirth);
       let age_dt = new Date(diffMs);
       return Math.abs(age_dt.getUTCFullYear() - 1970);

@@ -23,14 +23,14 @@ export default {
       scrollTimer: null,
       lastScrollPosition: 0,
       scrollOffset: 40,
-    }
+    };
   },
   mounted() {
-    this.lastScrollPosition = window.scrollY
-    window.addEventListener('scroll', this.onScroll)
+    this.lastScrollPosition = window.scrollY;
+    window.addEventListener('scroll', this.onScroll);
   },
   beforeUnmount() {
-    window.removeEventListener('scroll', this.onScroll)
+    window.removeEventListener('scroll', this.onScroll);
   },
   methods: {
     onButtonClicked(id) {
@@ -46,17 +46,17 @@ export default {
     },
     onScroll() {
       if (this.scrollingToView) {
-        return
+        return;
       }
 
       if (window.scrollY < 0) {
-        return
+        return;
       }
       if (Math.abs(window.scrollY - this.lastScrollPosition) < this.scrollOffset) {
-        return
+        return;
       }
-      this.showHeader = window.scrollY < this.lastScrollPosition
-      this.lastScrollPosition = window.scrollY
+      this.showHeader = window.scrollY < this.lastScrollPosition;
+      this.lastScrollPosition = window.scrollY;
     },
   }
 }

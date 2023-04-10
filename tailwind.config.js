@@ -1,4 +1,4 @@
-const { screens } = require('tailwindcss/defaultTheme')
+const { screens } = require('tailwindcss/defaultTheme');
 
 module.exports = {
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
@@ -35,4 +35,4 @@ module.exports = {
     }
   },
   plugins: [],
-}
+};

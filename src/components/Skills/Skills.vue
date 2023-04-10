@@ -150,7 +150,7 @@ export default {
         }
       },
       isMobile: false
-    }
+    };
   },
   mounted() {
     VanillaTilt.init(document.querySelectorAll(".skillcard"), {
@@ -165,17 +165,17 @@ export default {
     let skillcards = document.querySelectorAll('.skillcard');
     skillcards.forEach(skillcard => {
       skillcard.addEventListener('click', function () {
-          flipCard(skillcard, !skillcard.classList.contains("flipped"))
-      })
-    })
+          flipCard(skillcard, !skillcard.classList.contains("flipped"));
+      });
+    });
     function flipCard(skillcard, boolean) {
       skillcard.classList.toggle("flipped");
       skillcard.vanillaTilt.flipElement(boolean);
     }
 
-    let isMobile = false
-    checkIfMobile()
-    window.addEventListener('resize', () => {checkIfMobile()})
+    let isMobile = false;
+    checkIfMobile();
+    window.addEventListener('resize', () => {checkIfMobile();});
     function checkIfMobile() {
       if (window.matchMedia("(min-width: 1024px)").matches) {
         if (isMobile === true) {
@@ -183,7 +183,7 @@ export default {
             skillcard.vanillaTilt.settings.scale = 1.25;
             skillcard.vanillaTilt.settings.max = 18;
             isMobile = false;
-          })
+          });
         }
       } else {
         if (isMobile === false) {
@@ -191,7 +191,7 @@ export default {
             skillcard.vanillaTilt.settings.scale = 1;
             skillcard.vanillaTilt.settings.max = 0;
             isMobile = true;
-          })
+          });
         }
       }
     }
