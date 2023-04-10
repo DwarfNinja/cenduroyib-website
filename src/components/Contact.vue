@@ -1,8 +1,8 @@
 <template>
   <Alert v-if="showAlert" :formresponse="formResponse"></Alert>
   <div hidden class="bg-customgreen"></div>
-  <section class="mb-44" id="contact">
-    <h2 id="contact-h2" class="text-2xl mb-5 pb-2.5 underline-custom" data-aos="fade-up" data-aos-duration="800" data-aos-anchor-placement="center-center">Contact me</h2>
+  <section id="contact" class="scroll-m-28 mb-44">
+    <h2 id="contact-h2" class="h2-custom mb-5" data-aos="fade-up" data-aos-duration="800" data-aos-anchor-placement="center-center">Contact me</h2>
     <form class="flex flex-col px-6 overflow-hidden" id="contact-form" name="contact" method="post"
           data-netlify-recaptcha="true" data-netlify="true" v-on:submit.prevent="onSubmit"
           data-aos="fade-up" data-aos-duration="800" data-aos-delay="500" data-aos-anchor="#contact-h2" data-aos-anchor-placement="center-center">
@@ -17,11 +17,11 @@
 
       <div>
         <label class="mb-2 mt-3.5 block">Email</label>
-        <div class="inline-block">
+        <div>
           <div>
-            <input v-model="form.email" v-bind:class="{ 'invalid-input': !validEmail }" class="contact-input" type="text" placeholder="johndoe@email.com" name="email" required>
+            <input v-model="form.email" v-bind:class="{ 'invalid-input': !validEmail }" class="contact-input w-full max-w-xs" type="text" placeholder="johndoe@email.com" name="email" required>
           </div>
-          <label v-if="!validEmail" class="static sm:absolute top-0 sm:top-3 ml-0 sm:ml-36 bg-customred text-sm font-bold px-2 py-1 rounded">Not a valid email adres!</label>
+          <label v-if="!validEmail" class="static top-0 sm:top-3 ml-0 bg-customred text-sm font-bold px-2 py-1 rounded">Not a valid email adres!</label>
         </div>
       </div>
 
@@ -56,7 +56,7 @@ export default {
         email: "",
         message: ""
       }
-    }
+    };
   },
   methods: {
     encode(data) {
@@ -72,13 +72,23 @@ export default {
 
     createAlert(formResponse) {
       this.showAlert = true;
-      this.formResponse = formResponse
+      this.formResponse = formResponse;
       window.setTimeout(() => {
         this.showAlert = false;
       }, 6000);
     },
 
-    onSubmit() {
+    clearInputFields() {
+      let contactForm = document.getElementById("contact-form");
+      contactForm.reset();
+
+      Object.keys(this.form).forEach(key => {
+        this.form[key] = "";
+      });
+    },
+
+    onSubmit(event) {
+      event.preventDefault();
       if (this.validateEmail(this.form.email) === false) {
         console.log("Entered email is not a valid email");
         return;
@@ -97,6 +107,7 @@ export default {
           .then((response) => {
             if (response.ok) {
               this.createAlert("success");
+              this.clearInputFields();
             }
             else {
               throw response;
@@ -121,7 +132,7 @@ export default {
 }
 
 .contact-textarea {
-  @apply mb-10 p-3 rounded text-black max-h-80 w-full shadow-custombr outline-none border-transparent focus:border-customyellow border-3;
+  @apply mb-10 p-3 rounded text-black max-h-96 w-full shadow-custombr outline-none border-transparent focus:border-customyellow border-3;
 }
 
 .invalid-input {
