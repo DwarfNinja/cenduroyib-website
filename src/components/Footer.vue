@@ -1,5 +1,5 @@
 <template>
-  <footer class="flex justify-center items-center bg-white text-black px-9" style="min-height: 5rem">
+  <footer class="flex justify-center items-center bg-white text-black px-9 shadow-customt" style="min-height: 5rem">
     <nav>
       <ul id="footer-menu">
         <li class="footer-menu-item"><i class="far fa-envelope"></i><a href="mailto:cenduroyib@live.com">Email</a></li>
@@ -35,5 +35,4 @@ a {
   text-underline-offset: 0.3rem;
   text-decoration-thickness: 2px;
 }
-
 </style>

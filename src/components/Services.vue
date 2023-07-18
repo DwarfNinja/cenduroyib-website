@@ -1,14 +1,21 @@
 <template>
-  <section class="bg-white text-black w-full md:w-11/12 p-5 mx-auto mb-52 sm:p-14 sm:max-w-8xl" id="services" style="box-shadow: 15px 15px 20px darkblue;">
-    <h2 class="text-2xl mb-16 underline-h2">
+  <section class="bg-white text-black w-full md:w-11/12 p-5 mx-auto mb-52 sm:p-14 sm:max-w-8xl shadow-custombr" id="services">
+    <h2 class="h2-custom mb-16">
       Services
     </h2>
     <div class="grid justify-center gap-7 sm:gap-14" id="services-grid-container">
+
       <div class="services-items text-white rounded-2xl sm:h-auto" id="service-software" style="background-color: #202020; border: 11px solid #959595; height: 550px"
            data-aos="fade-right" data-aos-duration="800" data-aos-anchor-placement="center-center">
         <div class="services-header">
-          <i class="fas fa-terminal fa-2x mt-4 mb-4"></i>
-          <h2 class="text-2xl mb-8 underline-h2">
+          <lord-icon
+              src="https://cdn.lordicon.com/anihkfxp.json"
+              trigger="loop"
+              colors="primary:#ffffff,secondary:#f7b801"
+              stroke="60"
+              style="width:75px;height:75px;">
+          </lord-icon>
+          <h2 class="h2-custom mb-8" style="text-decoration-color: white;">
             Custom Software
           </h2>
         </div>
@@ -21,29 +28,37 @@
           </p>
         </div>
       </div>
+
       <div class="services-items" id="service-website"
            data-aos="fade-left" data-aos-duration="800" data-aos-anchor-placement="center-center">
         <div class="services-header">
-          <i class="far fa-window-maximize fa-2x mb-4"></i>
-          <h2 class="text-2xl mb-12 underline-h2">
+          <lord-icon
+              src="https://cdn.lordicon.com/qhgmphtg.json"
+              trigger="loop"
+              delay="1000"
+              colors="primary:#000000,secondary:#f7b801"
+              stroke="50"
+              style="width:75px;height:75px">
+          </lord-icon>
+          <h2 class="h2-custom mb-12" style="text-decoration-color: black;">
             Website
           </h2>
         </div>
         <div class="flex flex-wrap gap-2 sm:gap-4 justify-center overflow-hidden" id="service-website-elements-container">
-          <div class="service-website-element w-2/5" style="background-color: #56C2F1;"
-               data-aos="fade-right" data-aos-duration="1000" data-aos-delay="500" data-aos-anchor-placement="center-center">Starting a small business?</div>
+          <div class="serv-web-element w-2/5 text-center" style="background-color: #56C2F1;"
+               data-aos="fade-right" data-aos-duration="1000" data-aos-delay="500" data-aos-anchor="#center-serv-web-element" data-aos-anchor-placement="center-center">Starting a small business?</div>
 
-          <div class="service-website-element w-1/2" style="background-color: #FEE94E;"
-               data-aos="fade-left" data-aos-duration="1000" data-aos-delay="1100" data-aos-anchor-placement="center-center">Want an online portfolio to show your skills?</div>
+          <div class="serv-web-element w-1/2" style="background-color: #FEE94E;"
+               data-aos="fade-left" data-aos-duration="1000" data-aos-delay="1200" data-aos-anchor="#center-serv-web-element" data-aos-anchor-placement="center-center">Want an online portfolio to show your skills?</div>
 
-          <div class="service-website-element w-7/12 sm:w-5/12" style="background-color: #A1D72D;"
-               data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1700" data-aos-anchor-placement="center-center">A custom-made website is what you need.</div>
+          <div id="center-serv-web-element" class="serv-web-element w-7/12 sm:w-5/12" style="background-color: #A1D72D;"
+               data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1900" data-aos-anchor="#center-serv-web-element" data-aos-anchor-placement="center-center">A custom-made website is what you need.</div>
 
-          <div class="service-website-element text-white w-11/12" style="background-color: #D5322F;"
-               data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="2300" data-aos-anchor-placement="center-center">We will sit down together and discuss the details.</div>
+          <div class="serv-web-element text-white w-11/12" style="background-color: #D5322F;"
+               data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="2600" data-aos-anchor="#center-serv-web-element" data-aos-anchor-placement="center-center">We will sit down together and discuss the details.</div>
 
-          <div class="service-website-element text-white w-4/5 p-2" style="background-color: #1C28A5;"
-               data-aos="zoom-out" data-aos-duration="1000" data-aos-delay="2900" data-aos-anchor-placement="top-center">To get a website perfectly tailored to you!</div>
+          <div class="serv-web-element text-white w-4/5 p-2" style="background-color: #1C28A5;"
+               data-aos="zoom-out" data-aos-duration="1000" data-aos-delay="3300" data-aos-anchor="#center-serv-web-element" data-aos-anchor-placement="center-center">To get a website perfectly tailored to you!</div>
         </div>
       </div>
     </div>
@@ -63,7 +78,7 @@ export default {
       autoStart: false
     });
 
-    let typewriterDic = {"terminal": typewriterTerminal}
+    let typewriterDic = {"terminal": typewriterTerminal};
 
     typewriterTerminal.typeString(
         "Do you have a task that takes a lot of your time? A monotonous daily chore?\n" +
@@ -75,7 +90,7 @@ export default {
     const isInViewport = (entries, observer) => {
       entries.forEach(entry => {
         if (entry.target.getAttribute("data-inviewport") !== "true") {
-            entry.target.setAttribute("data-inviewport", entry.isIntersecting)
+            entry.target.setAttribute("data-inviewport", entry.isIntersecting);
         }
       });
     };
@@ -97,7 +112,7 @@ export default {
     const elements_inViewport = document.querySelectorAll("[data-inviewport]");
     elements_inViewport.forEach(element => {
       intersectionObserver.observe(element, obsOptions);
-      mutationObserver.observe(element, {attributes: true})
+      mutationObserver.observe(element, {attributes: true});
     });
 
     let serviceSoftware = document.getElementById("service-software");
@@ -127,7 +142,6 @@ export default {
 </script>
 
 <style scoped>
-
 #services-grid-container {
   grid-template-columns: repeat(2, minmax(auto, 38rem));
 }
@@ -142,8 +156,13 @@ export default {
   border-radius: 15px 15px  0 0;
 }
 
-.service-website-element {
+.serv-web-element{
   @apply p-2 sm:p-3 rounded;
+}
+
+.serv-web-element[data-aos-delay='3300'] [data-aos],
+[data-aos][data-aos][data-aos-delay='3300'] {
+  transition-delay: 3300ms;
 }
 
 @media (max-width: 1400px) {
@@ -156,5 +175,4 @@ export default {
     padding: 0.5rem 0.8rem 1.3rem 0.8rem;
   }
 }
-
 </style>

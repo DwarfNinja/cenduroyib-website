@@ -4,20 +4,18 @@
 
 @layer utilities {
 
-    .underline-h2 {
-        text-decoration-line: underline ;
+    .underline-custom {
+        text-decoration-line: underline;
+        text-decoration-color: #F7B801;
         text-underline-offset: 0.8rem;
         text-decoration-thickness: 2px;
     }
 
-    .skillcard-face {
-        color: black;
-        background-color: white;
-        border-radius: 1rem;
-        box-shadow: 10px 10px 20px darkblue;
-        position: absolute;
-        backface-visibility: hidden;
-        transform-style: preserve-3d;
-        transform: perspective(1000px);
+    .h2-custom {
+        @apply text-xl smph:text-2xl pb-2.5 underline-custom
+    }
+
+    .p-custom {
+        @apply text-sm smph:text-base
     }
 }

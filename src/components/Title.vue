@@ -1,8 +1,8 @@
 <template>
-  <section id="title">
+  <section id="title" class="scroll-my-36">
     <div class="mb-72">
-      <h1 class="text-white text-5xl font-extralight mb-6" id="titleh1">Cendur Oyib</h1>
-      <h2 class="text-white text-xl font-light" data-aos="fade-up" data-aos-delay="1250" data-aos-duration="800">Software tailored to you &nbsp;</h2>
+      <h1 class="text-white text-4xl sm:text-5xl font-normal mb-4 pb-2.5 underline-custom" data-aos="fade-up" data-aos-duration="800">Cendur Oyib</h1>
+      <h2 id="subtitle" class="text-white text-lg sm:text-2xl font-light"></h2>
     </div>
   </section>
 </template>
@@ -11,22 +11,16 @@
 export default {
   name: "Title",
   mounted() {
+    let subtitle = document.getElementById("subtitle");
 
-    let titleH1 = document.getElementById("titleh1");
-
-    let typewriterTitle = new Typewriter(titleH1, {
-      loop: false,
-      delay: 80,
+    new Typewriter(subtitle, {
+      strings: ["Junior Developer", "Student", "Game Developer", "Joyful", "Follower of Jesus"],
+      autoStart: true,
+      loop: true,
+      delay: 60,
     });
-
-    typewriterTitle.typeString("Cendur Oyib");
-    typewriterTitle.pauseFor(1000)
-    typewriterTitle.start()
-
+    document.getElementsByClassName("Typewriter__cursor")[0].style.color = "#F7B801";
   }
+
 }
 </script>
-
-<style scoped>
-
-</style>
