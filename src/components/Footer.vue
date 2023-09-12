@@ -2,37 +2,38 @@
   <footer class="flex justify-center items-center bg-white text-black px-9 shadow-customt" style="min-height: 5rem">
     <nav>
       <ul id="footer-menu">
-        <li class="footer-menu-item"><i class="far fa-envelope"></i><a href="mailto:cenduroyib@live.com">Email</a></li>
-        <li class="footer-menu-item"><i class="fab fa-instagram"></i><a href="https://www.instagram.com/cendur.oyib/">Instagram</a></li>
-        <li class="footer-menu-item"><i class="fab fa-linkedin-in"></i><a href="https://www.linkedin.com/in/cendur-oyib-a677b5200/">LinkedIn</a></li>
-        <li class="footer-menu-item"><i class="fab fa-github"></i><a href="https://github.com/DwarfNinja">GitHub</a></li>
+        <li>
+          <i class="far fa-envelope fa-lg"></i>
+          <AnimatedUnderline text="Email" colour="#F7B801" href="mailto:cenduroyib@live.com"></AnimatedUnderline>
+        </li>
+        <li>
+          <i class="fab fa-instagram fa-lg"></i>
+          <AnimatedUnderline text="Instagram" colour="#F7B801" href="https://www.instagram.com/cendur.oyib/"></AnimatedUnderline>
+        </li>
+        <li>
+          <i class="fab fa-linkedin-in fa-lg"></i>
+          <AnimatedUnderline text="LinkedIn" colour="#F7B801" href="https://www.linkedin.com/in/cendur-oyib-a677b5200/"></AnimatedUnderline>
+        </li>
+        <li>
+          <i class="fab fa-github fa-lg"></i>
+          <AnimatedUnderline text="GitHub" colour="#F7B801" href="https://github.com/DwarfNinja"></AnimatedUnderline>
+        </li>
       </ul>
     </nav>
   </footer>
 </template>
 
 <script>
+import AnimatedUnderline from "./AnimatedUnderline.vue";
+
 export default {
-  name: "Footer"
+  name: "Footer",
+  components: {AnimatedUnderline}
 }
 </script>
 
 <style scoped>
 li {
-  @apply m-2;
-}
-
-a {
-  @apply m-1 text-lg;
-}
-
-.footer-menu-item {
-  @apply inline-block;
-}
-
-.footer-menu-item:hover {
-  text-decoration-line: underline ;
-  text-underline-offset: 0.3rem;
-  text-decoration-thickness: 2px;
+  @apply m-2 inline-block;
 }
 </style>
