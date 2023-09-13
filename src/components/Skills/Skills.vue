@@ -12,9 +12,9 @@
           toggle: 'flex w-52 h-10 rounded-full relative cursor-pointer transition items-center box-content border-3 text-xs leading-none',
           toggleOn: 'bg-customdarkpurple border-customdarkpurple justify-start text-white',
           toggleOff: 'bg-customdarkpurple border-customdarkpurple justify-end text-white',
-          handle: 'inline-block bg-white w-16 h-10 top-0 rounded-full absolute transition-all',
-          handleOn: 'left-full transform -translate-x-full duration-300',
-          handleOff: 'left-0 transform translate-x-0 duration-300',
+          handle: 'inline-block bg-white w-12 h-8 rounded-full absolute transition-all',
+          handleOn: 'left-full transform -translate-x-full duration-300 -m-1.5',
+          handleOff: 'left-0 transform translate-x-0 duration-300 m-1.5',
           label: 'text-center p-5 whitespace-nowrap select-none text-base'}"
         >
           <template v-slot:label="{ checked, classList }">
