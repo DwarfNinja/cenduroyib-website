@@ -1,16 +1,20 @@
 <template>
   <section id="skills" class="scroll-m-28 lg:scroll-m-40 mb-48">
     <h2 id="skills-h2" class="h2-custom mb-8" data-aos="fade-up" data-aos-duration="800" data-aos-anchor-placement="center-center">Skills</h2>
+      <p class="p-custom mx-auto px-6 sm:px-8 mb-8" style="max-width: 60rem"
+         data-aos="fade-up" data-aos-duration="800" data-aos-delay="500" data-aos-anchor="#skills-h2" data-aos-anchor-placement="center-center">
+          Below is a showcase of the skills I've acquired throughout the years. Flip a card over to view more info!
+      </p>
     <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="500" data-aos-anchor="#skills-h2" data-aos-anchor-placement="center-center">
       <div>
         <Toggle v-model="toggleValue" on-label="Technologies" off-label="Languages" class="font-bold mb-5" :classes="{
           container: 'inline-block rounded-full outline-none',
           toggle: 'flex w-52 h-10 rounded-full relative cursor-pointer transition items-center box-content border-3 text-xs leading-none',
-          toggleOn: 'bg-customlightpurple border-customlightpurple justify-start text-white',
-          toggleOff: 'bg-customlightpurple border-customlightpurple justify-end text-white',
-          handle: 'inline-block bg-white w-16 h-10 top-0 rounded-full absolute transition-all',
-          handleOn: 'left-full transform -translate-x-full duration-300',
-          handleOff: 'left-0 transform translate-x-0 duration-300',
+          toggleOn: 'bg-customdarkpurple border-customdarkpurple justify-start text-white',
+          toggleOff: 'bg-customdarkpurple border-customdarkpurple justify-end text-white',
+          handle: 'inline-block bg-white w-12 h-8 rounded-full absolute transition-all',
+          handleOn: 'left-full transform -translate-x-full duration-300 -m-1.5',
+          handleOff: 'left-0 transform translate-x-0 duration-300 m-1.5',
           label: 'text-center p-5 whitespace-nowrap select-none text-base'}"
         >
           <template v-slot:label="{ checked, classList }">
@@ -60,7 +64,7 @@ export default {
           imgsrc: "dart-logo.png",
           start: new Date("03/10/2022"),
           end: new Date(Date.now()),
-          level: "w-[60%]"
+          level: "w-[80%]"
         },
         csharp: {
           name: "C#",
@@ -74,21 +78,21 @@ export default {
           imgsrc: "javascript-logo.png",
           start: new Date("04/14/2020"),
           end: new Date(Date.now()),
-          level: "w-[65%]"
+          level: "w-[70%]"
         },
         html: {
           name: "HTML",
           imgsrc: "html-logo.png",
           start: new Date("04/14/2020"),
           end: new Date(Date.now()),
-          level: "w-[60%]"
+          level: "w-[70%]"
         },
         css: {
           name: "CSS",
           imgsrc: "css-logo.png",
           start: new Date("04/14/2020"),
           end: new Date(Date.now()),
-          level: "w-[60%]"
+          level: "w-[70%]"
         },
       },
       technologies: {
@@ -97,7 +101,7 @@ export default {
           imgsrc: "flutter-logo.png",
           start: new Date("03/10/2022"),
           end: new Date(Date.now()),
-          level: "w-[65%]"
+          level: "w-[80%]"
         },
         godot: {
           name: "Godot",
@@ -113,12 +117,19 @@ export default {
           end: new Date(Date.now()),
           level: "w-[60%]"
         },
+        docker: {
+            name: "Docker",
+            imgsrc: "docker-logo.png",
+            start: new Date("03/10/2022"),
+            end: new Date(Date.now()),
+            level: "w-[45%]"
+        },
         figma: {
           name: "Figma",
           imgsrc: "figma-logo.png",
           start: new Date("03/10/2022"),
           end: new Date(Date.now()),
-          level: "w-[65%]"
+          level: "w-[75%]"
         },
         vuejs: {
           name: "VueJs",
@@ -150,7 +161,7 @@ export default {
         }
       },
       isMobile: false
-    }
+    };
   },
   mounted() {
     VanillaTilt.init(document.querySelectorAll(".skillcard"), {
@@ -165,17 +176,17 @@ export default {
     let skillcards = document.querySelectorAll('.skillcard');
     skillcards.forEach(skillcard => {
       skillcard.addEventListener('click', function () {
-          flipCard(skillcard, !skillcard.classList.contains("flipped"))
-      })
-    })
+          flipCard(skillcard, !skillcard.classList.contains("flipped"));
+      });
+    });
     function flipCard(skillcard, boolean) {
       skillcard.classList.toggle("flipped");
       skillcard.vanillaTilt.flipElement(boolean);
     }
 
-    let isMobile = false
-    checkIfMobile()
-    window.addEventListener('resize', () => {checkIfMobile()})
+    let isMobile = false;
+    checkIfMobile();
+    window.addEventListener('resize', () => {checkIfMobile();});
     function checkIfMobile() {
       if (window.matchMedia("(min-width: 1024px)").matches) {
         if (isMobile === true) {
@@ -183,7 +194,7 @@ export default {
             skillcard.vanillaTilt.settings.scale = 1.25;
             skillcard.vanillaTilt.settings.max = 18;
             isMobile = false;
-          })
+          });
         }
       } else {
         if (isMobile === false) {
@@ -191,7 +202,7 @@ export default {
             skillcard.vanillaTilt.settings.scale = 1;
             skillcard.vanillaTilt.settings.max = 0;
             isMobile = true;
-          })
+          });
         }
       }
     }

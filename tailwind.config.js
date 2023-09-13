@@ -1,4 +1,4 @@
-const { screens } = require('tailwindcss/defaultTheme')
+const { screens } = require('tailwindcss/defaultTheme');
 
 module.exports = {
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
@@ -10,9 +10,9 @@ module.exports = {
     },
     extend: {
       colors: {
-        "customdarkpurple": "#3d348b",
-        "customlightpurple": "#7678ED",
-        "customyellow": "#F7B801",
+        "customlightpurple": "#6e07f3",
+        "customdarkpurple": "#5302bb",
+        "customyellow": "#FEC10B",
         "customred": "#D00000", //E63946 //BA274A  //D00000
         "customgreen": "#14CC61" //09BC8A //27FB6B //14CC61
       },
@@ -35,4 +35,4 @@ module.exports = {
     }
   },
   plugins: [],
-}
+};

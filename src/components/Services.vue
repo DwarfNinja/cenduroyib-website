@@ -78,7 +78,7 @@ export default {
       autoStart: false
     });
 
-    let typewriterDic = {"terminal": typewriterTerminal}
+    let typewriterDic = {"terminal": typewriterTerminal};
 
     typewriterTerminal.typeString(
         "Do you have a task that takes a lot of your time? A monotonous daily chore?\n" +
@@ -90,7 +90,7 @@ export default {
     const isInViewport = (entries, observer) => {
       entries.forEach(entry => {
         if (entry.target.getAttribute("data-inviewport") !== "true") {
-            entry.target.setAttribute("data-inviewport", entry.isIntersecting)
+            entry.target.setAttribute("data-inviewport", entry.isIntersecting);
         }
       });
     };
@@ -112,7 +112,7 @@ export default {
     const elements_inViewport = document.querySelectorAll("[data-inviewport]");
     elements_inViewport.forEach(element => {
       intersectionObserver.observe(element, obsOptions);
-      mutationObserver.observe(element, {attributes: true})
+      mutationObserver.observe(element, {attributes: true});
     });
 
     let serviceSoftware = document.getElementById("service-software");

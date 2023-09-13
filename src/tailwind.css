@@ -5,10 +5,8 @@
 @layer utilities {
 
     .underline-custom {
-        text-decoration-line: underline;
-        text-decoration-color: #F7B801;
-        text-underline-offset: 0.8rem;
-        text-decoration-thickness: 2px;
+        @apply underline decoration-[#F7B801] underline-offset-[0.8rem] decoration-[3px]
+
     }
 
     .h2-custom {

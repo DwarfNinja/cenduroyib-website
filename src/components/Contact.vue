@@ -56,7 +56,7 @@ export default {
         email: "",
         message: ""
       }
-    }
+    };
   },
   methods: {
     encode(data) {
@@ -72,7 +72,7 @@ export default {
 
     createAlert(formResponse) {
       this.showAlert = true;
-      this.formResponse = formResponse
+      this.formResponse = formResponse;
       window.setTimeout(() => {
         this.showAlert = false;
       }, 6000);
