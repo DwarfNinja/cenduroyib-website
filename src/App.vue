@@ -55,7 +55,7 @@ html {
 }
 
 body {
-  @apply flex flex-col text-center bg-customdarkpurple text-white;
+  @apply flex flex-col text-center bg-customlightpurple text-white;
 }
 
 #boxed-container {
