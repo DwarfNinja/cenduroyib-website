@@ -1,8 +1,8 @@
 <template>
-  <Alert v-if="showAlert" :formresponse="formResponse"></Alert>
+  <Alert ref="formAlert"></Alert>
   <div hidden class="bg-customgreen"></div>
   <section id="contact" class="scroll-m-28 mb-44">
-    <h2 id="contact-h2" class="text-2xl mb-5 pb-2.5 underline-custom" data-aos="fade-up" data-aos-duration="800" data-aos-anchor-placement="center-center">Contact me</h2>
+    <h2 id="contact-h2" class="h2-custom mb-5" data-aos="fade-up" data-aos-duration="800" data-aos-anchor-placement="center-center">Contact me</h2>
     <form class="flex flex-col px-6 overflow-hidden" id="contact-form" name="contact" method="post"
           data-netlify-recaptcha="true" data-netlify="true" v-on:submit.prevent="onSubmit"
           data-aos="fade-up" data-aos-duration="800" data-aos-delay="500" data-aos-anchor="#contact-h2" data-aos-anchor-placement="center-center">
@@ -17,11 +17,11 @@
 
       <div>
         <label class="mb-2 mt-3.5 block">Email</label>
-        <div class="inline-block">
+        <div>
           <div>
-            <input v-model="form.email" v-bind:class="{ 'invalid-input': !validEmail }" class="contact-input" type="text" placeholder="johndoe@email.com" name="email" required>
+            <input v-model="form.email" v-bind:class="{ 'invalid-input': !validEmail }" class="contact-input w-full max-w-xs" type="text" placeholder="johndoe@email.com" name="email" required>
           </div>
-          <label v-if="!validEmail" class="static sm:absolute top-0 sm:top-3 ml-0 sm:ml-36 bg-customred text-sm font-bold px-2 py-1 rounded">Not a valid email adres!</label>
+          <label v-if="!validEmail" class="static top-0 sm:top-3 ml-0 bg-customred text-sm font-bold px-2 py-1 rounded">Not a valid email address!</label>
         </div>
       </div>
 
@@ -34,7 +34,7 @@
 
       <div data-netlify-recaptcha="true"></div>
       <div>
-        <button class="px-7 py-3.5 mb-10 rounded bg-white text-black font-bold shadow-custombr transition-all transform duration-100 hover:scale-105" type="submit">Send!</button>
+        <button class="px-7 py-3.5 mb-10 rounded bg-white text-black font-bold shadow-custombr transition-all transform duration-100 hover:scale-110" type="submit">Send!</button>
       </div>
     </form>
   </section>
@@ -48,15 +48,13 @@ export default {
   components: {Alert},
   data() {
     return {
-      showAlert: false,
-      formResponse: null,
       validEmail: true,
       form: {
         name: "",
         email: "",
         message: ""
       }
-    }
+    };
   },
   methods: {
     encode(data) {
@@ -70,17 +68,20 @@ export default {
       return this.validEmail;
     },
 
-    createAlert(formResponse) {
-      this.showAlert = true;
-      this.formResponse = formResponse
-      window.setTimeout(() => {
-        this.showAlert = false;
-      }, 6000);
+    clearInputFields() {
+      let contactForm = document.getElementById("contact-form");
+      contactForm.reset();
+
+      Object.keys(this.form).forEach(key => {
+        this.form[key] = "";
+      });
     },
 
-    onSubmit() {
+    onSubmit(event) {
+      event.preventDefault();
       if (this.validateEmail(this.form.email) === false) {
-        console.log("Entered email is not a valid email");
+        this.$refs.formAlert.createAlert("fail", "The entered email address is not valid!");
+        console.log("The entered email address is not valid");
         return;
       }
 
@@ -96,14 +97,15 @@ export default {
       fetch('/', options)
           .then((response) => {
             if (response.ok) {
-              this.createAlert("success");
+              this.$refs.formAlert.createAlert("success", "Thank you, your message has been sent!");
+              this.clearInputFields();
             }
             else {
               throw response;
             }
           })
           .catch((error) => {
-            this.createAlert("fail");
+            this.$refs.formAlert.createAlert("fail", "Sorry there was a problem, your message could not be sent!");
             console.log(error);
           });
     }
@@ -121,7 +123,7 @@ export default {
 }
 
 .contact-textarea {
-  @apply mb-10 p-3 rounded text-black max-h-80 w-full shadow-custombr outline-none border-transparent focus:border-customyellow border-3;
+  @apply mb-10 p-3 rounded text-black max-h-96 w-full shadow-custombr outline-none border-transparent focus:border-customyellow border-3;
 }
 
 .invalid-input {
