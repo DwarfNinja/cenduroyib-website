@@ -19,7 +19,7 @@ export default {
       loop: true,
       delay: 60,
     });
-    document.getElementsByClassName("Typewriter__cursor")[0].style.color = "#F7B801";
+    document.getElementsByClassName("Typewriter__cursor")[0].style.color = "#FEC10B";
   }
 
 }

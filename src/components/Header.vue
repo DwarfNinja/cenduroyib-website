@@ -2,12 +2,12 @@
   <header class="flex justify-center w-full top-2 sm:top-4 fixed z-10" v-bind:class="{'is-hidden': !showHeader}">
     <nav class="flex">
         <ul id="header-menu" class="flex flex-wrap gap-x-6 gap-y-2 justify-center m-auto p-2.5 min-[490px]:p-3.5 sm:p-4 bg-white w-full max-w-3xl shadow-customb rounded-2xl">
-          <li><AnimatedUnderline text="Home" colour="#F7B801" @click="onButtonClicked('title')"></AnimatedUnderline></li>
-          <li><AnimatedUnderline text="Who am I?" colour="#F7B801" @click="onButtonClicked('who')"></AnimatedUnderline></li>
-          <li><AnimatedUnderline text="Skills" colour="#F7B801" @click="onButtonClicked('skills')"></AnimatedUnderline></li>
-          <li><AnimatedUnderline text="Projects" colour="#F7B801" @click="onButtonClicked('projects')"></AnimatedUnderline></li>
-          <li><AnimatedUnderline text="Contact" colour="#F7B801" @click="onButtonClicked('contact')"></AnimatedUnderline></li>
-          <li><AnimatedUnderline text="About" colour="#F7B801" @click="onButtonClicked('about-website')"></AnimatedUnderline></li>
+          <li><AnimatedUnderline text="Home" colour="#FEC10B" @click="onButtonClicked('title')"></AnimatedUnderline></li>
+          <li><AnimatedUnderline text="Who am I?" colour="#FEC10B" @click="onButtonClicked('who')"></AnimatedUnderline></li>
+          <li><AnimatedUnderline text="Skills" colour="#FEC10B" @click="onButtonClicked('skills')"></AnimatedUnderline></li>
+          <li><AnimatedUnderline text="Projects" colour="#FEC10B" @click="onButtonClicked('projects')"></AnimatedUnderline></li>
+          <li><AnimatedUnderline text="Contact" colour="#FEC10B" @click="onButtonClicked('contact')"></AnimatedUnderline></li>
+          <li><AnimatedUnderline text="About" colour="#FEC10B" @click="onButtonClicked('about-website')"></AnimatedUnderline></li>
         </ul>
     </nav>
   </header>
