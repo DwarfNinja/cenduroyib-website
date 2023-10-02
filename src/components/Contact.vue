@@ -1,7 +1,7 @@
 <template>
   <Alert ref="formAlert"></Alert>
   <div hidden class="bg-customgreen"></div>
-  <section id="contact" class="scroll-m-28 mb-44">
+  <section id="contact" class="scroll-m-16 lg:scroll-m-28 mb-44">
     <h2 id="contact-h2" class="h2-custom mb-5" data-aos="fade-up" data-aos-duration="800" data-aos-anchor-placement="center-center">Contact me</h2>
     <form class="flex flex-col px-6 overflow-hidden" id="contact-form" name="contact" method="post"
           data-netlify-recaptcha="true" data-netlify="true" v-on:submit.prevent="onSubmit"
