@@ -43,6 +43,7 @@
       <PricingPlan plan-name="Premium"
                    pricing-onetime="3500"
                    pricing-monthly="125"
+                   is-starting-price="true"
                    package-level="3"
                    :products="premiumProducts"
                    description="Designed for small to medium businesses and those in need of a robust e-commerce solution"

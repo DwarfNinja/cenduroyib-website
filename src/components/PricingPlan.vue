@@ -2,8 +2,12 @@
   <div class="flex flex-col bg-white text-black p-7 rounded-2xl w-72 shadow-custombr h-min outline outline-[5px] -outline-offset-[10px]" :class="packageLevels[packageLevel].outlineColour">
     <h1 class="text-xl font-semibold mb-5" :class="packageLevels[packageLevel].planNameColour">{{ planName }}</h1>
     <div class="mb-5">
-      <h2 class="text-2xl font-bold">€{{ pricingOnetime }}</h2>
-      <h3 class="text-xl font-bold m-auto">€{{ pricingMonthly }}/mo</h3>
+      <div class="grid grid-cols-3 items-center">
+        <div class="text-base text-right pr-1" :class="isStartingPrice ?? 'invisible'">from</div>
+        <div class="text-2xl font-bold">€{{ pricingOnetime }}</div>
+        <div></div>
+      </div>
+      <div class="text-xl font-bold m-auto">€{{ pricingMonthly }}/mo</div>
     </div>
     <div class="flex h-16 mb-5">
       <p class="text-sm m-auto">{{ description }}</p>
@@ -34,7 +38,7 @@ import SkillCard from "./Skills/SkillCard.vue";
 export default {
   name: "PricingPlan",
   components: {SkillCard},
-  props: ["planName", "pricingOnetime", "pricingMonthly", "products", "description", "packageLevel"],
+  props: ["planName", "pricingOnetime", "pricingMonthly", "isStartingPrice", "products", "description", "packageLevel"],
   data() {
     return {
       packageLevels: {
