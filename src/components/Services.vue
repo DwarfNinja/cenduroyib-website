@@ -17,7 +17,7 @@
     </div>
     <div class="w-full m-auto flex justify-center flex-wrap gap-5">
       <PricingPlan plan-name="Simple"
-                   pricing-onetime="1000"
+                   pricing-onetime="999"
                    pricing-monthly="15"
                    package-level="0"
                    :products="simpleProducts"
@@ -25,7 +25,7 @@
                    data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
       </PricingPlan>
       <PricingPlan plan-name="Standard"
-                   pricing-onetime="1500"
+                   pricing-onetime="1499"
                    pricing-monthly="30"
                    package-level="1"
                    :products="standardProducts"
@@ -33,7 +33,7 @@
                    data-aos="fade-up" data-aos-duration="800" data-aos-delay="700">
       </PricingPlan>
       <PricingPlan plan-name="Complete"
-                   pricing-onetime="2500"
+                   pricing-onetime="2499"
                    pricing-monthly="80"
                    package-level="2"
                    :products="completeProducts"
@@ -41,7 +41,7 @@
                    data-aos="fade-up" data-aos-duration="800" data-aos-delay="900">
       </PricingPlan>
       <PricingPlan plan-name="Premium"
-                   pricing-onetime="3500"
+                   pricing-onetime="3499"
                    pricing-monthly="125"
                    is-starting-price="true"
                    package-level="3"

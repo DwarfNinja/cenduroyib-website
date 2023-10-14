@@ -33,11 +33,8 @@
 </template>
 
 <script>
-import SkillCard from "./Skills/SkillCard.vue";
-
 export default {
   name: "PricingPlan",
-  components: {SkillCard},
   props: ["planName", "pricingOnetime", "pricingMonthly", "isStartingPrice", "products", "description", "packageLevel"],
   data() {
     return {
