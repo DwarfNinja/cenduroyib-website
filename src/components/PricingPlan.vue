@@ -14,14 +14,10 @@
     </div>
     <ul class="text-2xl h-full mb-5 p-2 relative">
       <li v-for="product in products" class="flex items-center">
-        <i class="fa-solid fa-check absolute left-0 p-1 rounded-2xl" :class="product.special === true ? [packageLevels[packageLevel].backgroundColour, 'text-white'] : ''"></i>
-        <div class="w-full px-3 m-1">
-          <span class="text-sm flex w-full justify-center">{{ product.name }}</span>
-        </div>
-        <div v-if="product.info != null" class="tooltip absolute right-0">
-          <i class="fa-solid fa-info fa-sm px-1.5"></i>
-          <span class="tooltiptext absolute shadow-2xl p-3.5 bg-white text-black text-sm w-44 right-5 sm:right-auto whitespace-pre-wrap" :class="packageLevels[packageLevel].outlineColour">{{ product.info }}</span>
-        </div>
+        <Product :product="product"
+                 :icon-colour="[packageLevels[packageLevel].backgroundColour, 'text-white']"
+                 :info-colour="packageLevels[packageLevel].outlineColour">
+        </Product>
       </li>
     </ul>
     <button class="mx-1 md:mx-4 sm:text-lg text-white p-1 px-2 mb-2 rounded-2xl transition-all transform duration-100 hover:scale-110"
@@ -33,8 +29,11 @@
 </template>
 
 <script>
+import Product from "./Product.vue";
+
 export default {
   name: "PricingPlan",
+  components: {Product},
   props: ["planName", "pricingOnetime", "pricingMonthly", "isStartingPrice", "products", "description", "packageLevel"],
   data() {
     return {
@@ -81,15 +80,6 @@ export default {
 <style scoped>
 li {
   @apply p-1 text-sm smph:text-base;
-}
-
-/* Tooltip text */
-.tooltip .tooltiptext {
-  @apply outline outline-[3px] -outline-offset-[7px] z-10 rounded-lg invisible opacity-0 transition-opacity duration-300 top-1/2 -translate-y-1/2;
-}
-
-.tooltip:hover .tooltiptext {
-  @apply visible opacity-100;
 }
 
 .aos-init[data-aos][data-aos].aos-animate {
