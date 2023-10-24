@@ -13,7 +13,7 @@
       Don't fit in a box below? Get in contact so we can create a personal solution that fits you.
     </p>
     <div class="flex flex-col items-center font-bold mb-8" data-aos="fade-up" data-aos-duration="800" data-aos-delay="700" data-aos-anchor="#services-h2" data-aos-anchor-placement="center-center">
-      <p class="w-max mx-1 bg-white p-2 px-5 rounded-3xl text-lg text-black shadow-custombr mb-4">Current clients: 1</p>
+      <p class="w-max mx-1 bg-white p-2 px-5 rounded-3xl text-lg text-black shadow-custombr mb-4">Satisfied clients: 5</p>
     </div>
     <div class="w-full m-auto flex justify-center flex-wrap gap-5">
       <PricingPlan plan-name="Simple"
