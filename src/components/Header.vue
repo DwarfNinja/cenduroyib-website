@@ -49,6 +49,7 @@ export default {
   },
   methods: {
     onButtonClicked(id) {
+      location.href=`#${id}`;
       clearTimeout(this.scrollTimer);
       this.scrollingToView = true;
 
