@@ -1,5 +1,5 @@
 <template>
-    <a class="mx-1 text-sm font-bold sm:text-lg p-1 text-black link-underline">
+    <a class="mx-1 text-sm font-bold sm:text-lg p-1 text-black link-underline" :href="href">
       <span>{{text}}</span>
     </a>
 </template>
@@ -7,7 +7,7 @@
 <script>
 export default {
   name: "AnimatedUnderline",
-  props: ["text", "colour"],
+  props: ["href", "text", "colour"],
 }
 </script>
 
