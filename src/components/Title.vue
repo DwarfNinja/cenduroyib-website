@@ -14,7 +14,7 @@ export default {
     let subtitle = document.getElementById("subtitle");
 
     new Typewriter(subtitle, {
-      strings: ["Junior Developer", "Student", "Game Developer", "Joyful", "Follower of Jesus"],
+      strings: ["Software Developer", "Student", "Game Developer", "Joyful", "Follower of Jesus"],
       autoStart: true,
       loop: true,
       delay: 60,
