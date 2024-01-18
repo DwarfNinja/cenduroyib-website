@@ -1,30 +1,40 @@
 <template>
-  <div :class="`fixed ${alertDataDic[formresponse].colour} p-3 sm:p-5 top-5 left-1/20 sm:left-auto right-1/20 sm:right-2 rounded z-10`">
+  <div v-if="showAlert" :class="`fixed ${alertDataDic[alertType].colour} p-3 sm:p-5 top-5 left-1/20 sm:left-auto right-1/20 sm:right-2 rounded z-10`">
     <div></div>
-    <span :class="`${alertDataDic[formresponse].icon} mr-2`"></span>
-    <span>{{ alertDataDic[formresponse].message }}</span>
+    <span :class="`${alertDataDic[alertType].icon} mr-2`"></span>
+    <span>{{ alertMessage }}</span>
   </div>
 </template>
 
 <script>
 export default {
   name: "Alert",
-  props: ["formresponse"],
   data() {
     return {
+      showAlert: false,
+      alertType: null,
+      alertMessage: null,
       alertDataDic: {
         success: {
-          message: "Thank you, your message has been sent!",
           colour: "bg-customgreen",
           icon: "fas fa-check-circle"
         },
         fail: {
-          message: "Sorry there was a problem, your message could not be sent!",
           colour: "bg-customred",
           icon: "fas fa-times-circle"
         }
       }
-    }
+    };
+  },
+  methods: {
+    createAlert(alertType, alertMessage) {
+      this.showAlert = true;
+      this.alertType = alertType;
+      this.alertMessage = alertMessage;
+      window.setTimeout(() => {
+        this.showAlert = false;
+      }, 6000);
+    },
   }
 }
 </script>
