@@ -5,6 +5,7 @@
     <WhoAmI></WhoAmI>
     <Skills></Skills>
     <Projects></Projects>
+    <Services></Services>
     <Contact></Contact>
     <About></About>
   </div>
@@ -20,10 +21,12 @@ import Projects from "./components/Projects/Projects.vue";
 import Contact from "./components/Contact.vue";
 import About from "./components/About.vue"
 import Footer from "./components/Footer.vue";
+import Services from "./components/Services.vue";
 
 export default  {
   name: "App",
   components: {
+    Services,
     Contact,
     Header,
     Title,
@@ -55,7 +58,7 @@ html {
 }
 
 body {
-  @apply flex flex-col text-center bg-customdarkpurple text-white;
+  @apply flex flex-col text-center bg-customlightpurple text-white;
 }
 
 #boxed-container {

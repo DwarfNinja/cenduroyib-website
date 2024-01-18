@@ -1,5 +1,5 @@
 <template>
-  <section id="who" class="mb-48 scroll-m-28 sm:scroll-m-52">
+  <section id="who" class="mb-48 scroll-m-24 sm:scroll-m-44">
     <img class="mx-auto mb-14 w-60 lgph:w-64 rounded-3xl shadow-custombr" src="/profile-picture.jpg" alt="Profile Picture"
          data-aos="fade-up" data-aos-duration="800" data-aos-anchor-placement="top-center">
     <div>

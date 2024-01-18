@@ -1,7 +1,7 @@
 <template>
-  <Alert v-if="showAlert" :formresponse="formResponse"></Alert>
+  <Alert ref="formAlert"></Alert>
   <div hidden class="bg-customgreen"></div>
-  <section id="contact" class="scroll-m-28 mb-44">
+  <section id="contact" class="scroll-m-16 lg:scroll-m-28 mb-44">
     <h2 id="contact-h2" class="h2-custom mb-5" data-aos="fade-up" data-aos-duration="800" data-aos-anchor-placement="center-center">Contact me</h2>
     <form class="flex flex-col px-6 overflow-hidden" id="contact-form" name="contact" method="post"
           data-netlify-recaptcha="true" data-netlify="true" v-on:submit.prevent="onSubmit"
@@ -21,7 +21,7 @@
           <div>
             <input v-model="form.email" v-bind:class="{ 'invalid-input': !validEmail }" class="contact-input w-full max-w-xs" type="text" placeholder="johndoe@email.com" name="email" required>
           </div>
-          <label v-if="!validEmail" class="static top-0 sm:top-3 ml-0 bg-customred text-sm font-bold px-2 py-1 rounded">Not a valid email adres!</label>
+          <label v-if="!validEmail" class="static top-0 sm:top-3 ml-0 bg-customred text-sm font-bold px-2 py-1 rounded">Not a valid email address!</label>
         </div>
       </div>
 
@@ -34,7 +34,7 @@
 
       <div data-netlify-recaptcha="true"></div>
       <div>
-        <button class="px-7 py-3.5 mb-10 rounded bg-white text-black font-bold shadow-custombr transition-all transform duration-100 hover:scale-105" type="submit">Send!</button>
+        <button class="px-7 py-3.5 mb-10 rounded bg-white text-black font-bold shadow-custombr transition-all transform duration-200 hover:scale-110" type="submit">Send!</button>
       </div>
     </form>
   </section>
@@ -48,8 +48,6 @@ export default {
   components: {Alert},
   data() {
     return {
-      showAlert: false,
-      formResponse: null,
       validEmail: true,
       form: {
         name: "",
@@ -70,14 +68,6 @@ export default {
       return this.validEmail;
     },
 
-    createAlert(formResponse) {
-      this.showAlert = true;
-      this.formResponse = formResponse;
-      window.setTimeout(() => {
-        this.showAlert = false;
-      }, 6000);
-    },
-
     clearInputFields() {
       let contactForm = document.getElementById("contact-form");
       contactForm.reset();
@@ -90,7 +80,8 @@ export default {
     onSubmit(event) {
       event.preventDefault();
       if (this.validateEmail(this.form.email) === false) {
-        console.log("Entered email is not a valid email");
+        this.$refs.formAlert.createAlert("fail", "The entered email address is not valid!");
+        console.log("The entered email address is not valid");
         return;
       }
 
@@ -106,7 +97,7 @@ export default {
       fetch('/', options)
           .then((response) => {
             if (response.ok) {
-              this.createAlert("success");
+              this.$refs.formAlert.createAlert("success", "Thank you, your message has been sent!");
               this.clearInputFields();
             }
             else {
@@ -114,7 +105,7 @@ export default {
             }
           })
           .catch((error) => {
-            this.createAlert("fail");
+            this.$refs.formAlert.createAlert("fail", "Sorry there was a problem, your message could not be sent!");
             console.log(error);
           });
     }

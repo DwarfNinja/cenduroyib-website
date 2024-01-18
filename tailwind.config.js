@@ -10,9 +10,10 @@ module.exports = {
     },
     extend: {
       colors: {
-        "customdarkpurple": "#3d348b",
-        "customlightpurple": "#7678ED",
-        "customyellow": "#F7B801",
+        "customgray": "#9CA3AF",
+        "customlightpurple": "#6e07f3",
+        "customdarkpurple": "#5302bb",
+        "customyellow": "#FEC10B",
         "customred": "#D00000", //E63946 //BA274A  //D00000
         "customgreen": "#14CC61" //09BC8A //27FB6B //14CC61
       },

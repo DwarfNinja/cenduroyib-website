@@ -1,20 +1,20 @@
 <template>
-  <section id="skills" class="scroll-m-28 lg:scroll-m-40 mb-48">
+  <section id="skills" class=" scroll-m-16 lg:scroll-m-28 mb-48">
     <h2 id="skills-h2" class="h2-custom mb-8" data-aos="fade-up" data-aos-duration="800" data-aos-anchor-placement="center-center">Skills</h2>
       <p class="p-custom mx-auto px-6 sm:px-8 mb-8" style="max-width: 60rem"
          data-aos="fade-up" data-aos-duration="800" data-aos-delay="500" data-aos-anchor="#skills-h2" data-aos-anchor-placement="center-center">
-          Below is a showcase of the skills I've acquired throughout the years. Flip a card over to view more info!
+        Below is a showcase of the skills I've acquired throughout the years. Flip a card over to view more info!
       </p>
     <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="500" data-aos-anchor="#skills-h2" data-aos-anchor-placement="center-center">
       <div>
         <Toggle v-model="toggleValue" on-label="Technologies" off-label="Languages" class="font-bold mb-5" :classes="{
           container: 'inline-block rounded-full outline-none',
           toggle: 'flex w-52 h-10 rounded-full relative cursor-pointer transition items-center box-content border-3 text-xs leading-none',
-          toggleOn: 'bg-customlightpurple border-customlightpurple justify-start text-white',
-          toggleOff: 'bg-customlightpurple border-customlightpurple justify-end text-white',
-          handle: 'inline-block bg-white w-16 h-10 top-0 rounded-full absolute transition-all',
-          handleOn: 'left-full transform -translate-x-full duration-300',
-          handleOff: 'left-0 transform translate-x-0 duration-300',
+          toggleOn: 'bg-customdarkpurple border-customdarkpurple justify-start text-white',
+          toggleOff: 'bg-customdarkpurple border-customdarkpurple justify-end text-white',
+          handle: 'inline-block bg-white w-12 h-8 rounded-full absolute transition-all',
+          handleOn: 'left-full transform -translate-x-full duration-300 -m-1.5',
+          handleOff: 'left-0 transform translate-x-0 duration-300 m-1.5',
           label: 'text-center p-5 whitespace-nowrap select-none text-base'}"
         >
           <template v-slot:label="{ checked, classList }">
