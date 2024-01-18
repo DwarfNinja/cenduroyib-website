@@ -34,7 +34,7 @@
 
       <div data-netlify-recaptcha="true"></div>
       <div>
-        <button class="px-7 py-3.5 mb-10 rounded bg-white text-black font-bold shadow-custombr transition-all transform duration-100 hover:scale-110" type="submit">Send!</button>
+        <button class="px-7 py-3.5 mb-10 rounded bg-white text-black font-bold shadow-custombr transition-all transform duration-200 hover:scale-110" type="submit">Send!</button>
       </div>
     </form>
   </section>
