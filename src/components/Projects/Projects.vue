@@ -3,20 +3,23 @@
     <h2 id="projects-h2" class="h2-custom mb-8" data-aos="fade-up" data-aos-duration="800" data-aos-anchor-placement="center-center">
       Projects
     </h2>
-      <p class="p-custom mx-auto px-6 sm:px-8 mb-8" style="max-width: 60rem"
-         data-aos="fade-up" data-aos-duration="800" data-aos-delay="500" data-aos-anchor="#projects-h2" data-aos-anchor-placement="center-center">
-          A display of a few of my completed projects.
-      </p>
-      <div class="flex justify-start align-top h-full px-5 md:px-12 lg:px-16">
-        <div class="flex flex-wrap mx-auto mb-auto justify-center" style="grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));">
-          <ProjectCard class="projectcard" :project="projects.loopsnelheid" data-animdelay="0"></ProjectCard>
-          <ProjectCard class="projectcard" :project="projects.cloakandhammer" data-animdelay="300"></ProjectCard>
-          <ProjectCard class="projectcard" :project="projects.blackjack" data-animdelay="600"></ProjectCard>
-          <ProjectCard class="projectcard" :project="projects.lingo" data-animdelay="900"></ProjectCard>
-          <ProjectCard class="projectcard" :project="projects.tetris" data-animdelay="1200"></ProjectCard>
-          <ProjectCard class="projectcard" :project="projects.cenduroyib" data-animdelay="1500"></ProjectCard>
-        </div>
+    <p class="p-custom mx-auto px-6 sm:px-8 mb-8" style="max-width: 60rem"
+       data-aos="fade-up" data-aos-duration="800" data-aos-delay="500" data-aos-anchor="#projects-h2" data-aos-anchor-placement="center-center">
+      A display of a few of my completed projects.
+    </p>
+    <div class="flex justify-start align-top h-full px-5 md:px-12 lg:px-16">
+      <div class="flex flex-wrap mx-auto mb-auto justify-center" style="grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));">
+        <ProjectCard class="projectcard" :project="projects.genesissoftwarecreations" data-animdelay="0"></ProjectCard>
+        <ProjectCard class="projectcard" :project="projects.communion" data-animdelay="300"></ProjectCard>
+        <ProjectCard class="projectcard" :project="projects.buddywatch" data-animdelay="600"></ProjectCard>
+        <ProjectCard class="projectcard" :project="projects.loopsnelheid" data-animdelay="900"></ProjectCard>
+        <ProjectCard class="projectcard" :project="projects.cloakandhammer" data-animdelay="1200"></ProjectCard>
+        <ProjectCard class="projectcard" :project="projects.blackjack" data-animdelay="1500"></ProjectCard>
+        <ProjectCard class="projectcard" :project="projects.lingo" data-animdelay="1800"></ProjectCard>
+        <ProjectCard class="projectcard" :project="projects.tetris" data-animdelay="2100"></ProjectCard>
+        <ProjectCard class="projectcard" :project="projects.cenduroyib" data-animdelay="2400"></ProjectCard>
       </div>
+    </div>
   </section>
 </template>
 
@@ -30,6 +33,21 @@ export default {
     return {
       toggleValue: true,
       projects: {
+        genesissoftwarecreations: {
+          name: "Genesis Software Creations",
+          imgsrc: "genesissoftwarecreations-website.png",
+          desc: "My Software Development Company",
+        },
+        communion: {
+          name: "Communion",
+          imgsrc: "communion-app.png",
+          desc: "Christian Social Media App",
+        },
+        buddywatch: {
+          name: "BuddyWatch",
+          imgsrc: "buddywatch-app.png",
+          desc: "Mobile App For Detecting PTSD symptoms",
+        },
         loopsnelheid: {
           name: "Loopsnelheid",
           imgsrc: "loopsnelheid-app.png",
